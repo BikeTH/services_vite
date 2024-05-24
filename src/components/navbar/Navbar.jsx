@@ -20,7 +20,7 @@ export default function Navbar(){
     return (
     <nav className="nav">
         <Link to ="/">
-            <img src={logo} className="nav-logo"/>
+            <img src={logo} alt="myLogo" className="nav-logo"/>
         </Link>
         <div className="menu" onClick={toggleMenu}>
             {menuOpen ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
