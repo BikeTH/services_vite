@@ -25,7 +25,7 @@ export default function Navbar() {
             </div>
             <ul className={menuOpen ? "open" : ""}>
                 <CustomLink to="/" onClick={handleLinkClick}>Home</CustomLink>
-                <CustomLink to="/services" hasSubMenu>Services</CustomLink>
+                <CustomLink to="/Services" hasSubMenu>Services</CustomLink>
                 <CustomLink to="/about" onClick={handleLinkClick}>About</CustomLink>
                 <CustomLink to="/contact" onClick={handleLinkClick}>Contact</CustomLink>
             </ul>
