@@ -18,6 +18,8 @@ body {
     padding: 0 1rem;
     font-size: 2rem;
     z-index: 1000;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
 .nav ul {
@@ -67,11 +69,19 @@ nav .menu {
     cursor: pointer;
 }
 
-@media (prefers-reduced-motion) {
-    .nav-logo {
-      animation: App-logo-spin 20s infinite linear;
-    }
-  }
+.sub-menu {
+    position: absolute;
+    background-color: #282c30;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.sub-menu li {
+    color: white;
+}
 
 /* Media query for smaller screens */
 @media screen and (max-width: 960px) {
