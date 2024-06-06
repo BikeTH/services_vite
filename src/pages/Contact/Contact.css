@@ -84,6 +84,10 @@ select:hover {
 }
 
 @media screen and (max-width: 768px) {
+    .contact-title{
+        padding-top: 20px;
+    }
+
     .form-feedback{
         display: flex;
         flex-direction: column;

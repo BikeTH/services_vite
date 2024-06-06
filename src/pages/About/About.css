@@ -4,7 +4,7 @@
     color: #9fef00;
     font-size: 15px;
     padding-left: 50px;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .introduction{
@@ -66,6 +66,7 @@
         font-size: 15px;
         padding: 0;
         padding-left: 5%;
+        padding-top: 10%;
     }
     
     .introduction{

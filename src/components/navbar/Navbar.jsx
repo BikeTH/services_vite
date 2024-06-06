@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/logo/sisLogo.png';
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const location= useLocation();
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -15,8 +17,28 @@ export default function Navbar() {
         setMenuOpen(false);
     };
 
+    useEffect(() =>{
+        window.scrollTo(0,0);
+    }, [location]);
+
+    useEffect(() =>{
+        const handleScroll = () => {
+            const position = window.scrollY;
+            setScrollPosition(position);
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true});
+
+        return() => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const maxScroll = 300;
+    const opacity = scrollPosition / maxScroll > 1 ? 1 : scrollPosition / maxScroll;
+
     return (
-        <nav className="nav">
+        <nav className="nav" style={{backgroundColor: `rgba(40, 44, 48, ${opacity})`}}>
             <Link to="/">
                 <img src={logo} alt="myLogo" className="nav-logo"/>
             </Link>
@@ -25,7 +47,7 @@ export default function Navbar() {
             </div>
             <ul className={menuOpen ? "open" : ""}>
                 <CustomLink to="/" onClick={handleLinkClick}>Home</CustomLink>
-                <CustomLink to="/Services" hasSubMenu>Services</CustomLink>
+                <CustomLink style={{backgroundColor:'inherit', transform:'none', boxShadow:'none'}}hasSubMenu>Services</CustomLink>
                 <CustomLink to="/about" onClick={handleLinkClick}>About</CustomLink>
                 <CustomLink to="/contact" onClick={handleLinkClick}>Contact</CustomLink>
             </ul>
@@ -33,7 +55,7 @@ export default function Navbar() {
     );
 }
 
-function CustomLink({ to, children, hasSubMenu, ...props }) {
+function CustomLink({ to, children, hasSubMenu, style, ...props }) {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
     const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -46,18 +68,22 @@ function CustomLink({ to, children, hasSubMenu, ...props }) {
         setSubMenuOpen(false);
     };
 
+    const handleToggleSubMenu = () => {
+        setSubMenuOpen(!subMenuOpen);
+    };
+
     return (
-        <li className={isActive ? "active" : ""} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <li className={isActive ? "active" : ""} style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {hasSubMenu ? (
-                <div>
-                    <Link style={{paddingTop:"7px"}}>{children}</Link>
-                    {subMenuOpen && (
-                        <ul className="sub-menu">
-                            <li><Link to="/service1">UnitTrust Consultantation</Link></li>
-                            <li><Link to="/service2">Assignment Aid</Link></li>
-                        </ul>
-                    )}
-                </div>
+                    <div className="servicesMenu" onClick={handleToggleSubMenu}>
+                        {children}
+                        {subMenuOpen && (
+                            <ul className="sub-menu">
+                                <li><Link to="/service1">UnitTrust Consultantation</Link></li>
+                                <li><Link to="/service2">Assignment Aid</Link></li>
+                            </ul>
+                        )}
+                    </div>
             ) : (
                 <Link to={to} {...props}>
                     {children}

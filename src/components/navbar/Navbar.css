@@ -7,9 +7,10 @@ body {
 }
 
 .nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    background-color: #282c30;
+    width: 100%;
+    background-color: rgba(40, 44, 48, 0);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -20,6 +21,7 @@ body {
     z-index: 1000;
     padding-left: 45px;
     padding-right: 45px;
+    transition: background-color 0.3s ease;
 }
 
 .nav ul {
@@ -69,23 +71,32 @@ nav .menu {
     cursor: pointer;
 }
 
+.servicesMenu{
+    padding-top: 7.5px;
+    cursor: pointer;
+    color: whitesmoke;
+    position: relative;
+}
+
 .sub-menu {
     position: absolute;
-    background-color: #282c30;
+    top: 100%;
+    left: 0;
+    background-color: rgba(40, 44, 48, 0.5);
     color: white;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     font-size: 24px;
     transform: translateX(-50%);
-    padding: 10px;  /* Add some padding for spacing */
-    border-radius: 5px;  /* Add some rounding of corners for better aesthetics */
+    padding: 10px;
+    border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sub-menu li {
     color: white;
-    padding: 5px 10px;  /* Add padding for better spacing */
+    padding: 5px 10px;
     white-space: nowrap;
 }
 
@@ -98,11 +109,17 @@ nav .menu {
     .nav {
         color: inherit;
         text-decoration: none;
-        height: 100%;
         display: flex;
         align-items: flex-start;
         padding: .25rem;
         flex-direction: column;
+        background-color: rgba(40, 44, 48, 1) !important;
+    }
+
+    .servicesMenu{
+        cursor: pointer;
+        color: #808080;
+        padding-bottom: 8px;
     }
 
     .nav ul {
@@ -115,6 +132,8 @@ nav .menu {
 
     .nav ul.open{
         display:flex;
+        flex-direction: column;
+        background-color: rgba(40, 44, 48);
     }
 
     .nav li{
@@ -127,5 +146,14 @@ nav .menu {
 
     .nav-logo {
         height: 40px;
+    }
+
+    .servicesMenu .sub-menu{
+        display: flex;
+        position: static;
+        transform: translateX(0%);
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
     }
 }
