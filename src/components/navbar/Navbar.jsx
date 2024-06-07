@@ -3,6 +3,8 @@ import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/logo/sisLogo.png';
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
+import { IoIosArrowDown} from "react-icons/io";
+import { BiBorderBottom } from "react-icons/bi";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -47,8 +49,8 @@ export default function Navbar() {
             </div>
             <ul className={menuOpen ? "open" : ""}>
                 <CustomLink to="/" onClick={handleLinkClick}>Home</CustomLink>
-                <CustomLink style={{backgroundColor:'inherit', transform:'none', boxShadow:'none'}}hasSubMenu>Services</CustomLink>
                 <CustomLink to="/about" onClick={handleLinkClick}>About</CustomLink>
+                <CustomLink style={{backgroundColor:'inherit', transform:'none', boxShadow:'none', borderBottom: 'none'}}hasSubMenu>Services</CustomLink>
                 <CustomLink to="/contact" onClick={handleLinkClick}>Contact</CustomLink>
             </ul>
         </nav>
@@ -59,31 +61,59 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
     const [subMenuOpen, setSubMenuOpen] = useState(false);
+    const [subMenuWay, setSubMenuWay] = useState(window.innerWidth <= 960);
+
+    useEffect(() => {
+        const handleSubMenuWay = () => {
+            setSubMenuWay(window.innerWidth <= 960);
+        };
+
+        window.addEventListener('resize', handleSubMenuWay);
+
+        return () => {
+            window.removeEventListener('resize', handleSubMenuWay);
+        };
+    }, []);
 
     const handleMouseEnter = () => {
-        setSubMenuOpen(true);
+        if (!subMenuWay) {
+            setSubMenuOpen(true);
+        }
     };
 
     const handleMouseLeave = () => {
-        setSubMenuOpen(false);
+        if (!subMenuWay) {
+            setSubMenuOpen(false);
+        }
     };
 
     const handleToggleSubMenu = () => {
-        setSubMenuOpen(!subMenuOpen);
+        if (subMenuWay) {
+            setSubMenuOpen(!subMenuOpen);
+        }
     };
 
     return (
-        <li className={isActive ? "active" : ""} style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <li
+            className={isActive ? "active" : ""}
+            style={style}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             {hasSubMenu ? (
-                    <div className="servicesMenu" onClick={handleToggleSubMenu}>
-                        {children}
-                        {subMenuOpen && (
-                            <ul className="sub-menu">
-                                <li><Link to="/service1">UnitTrust Consultantation</Link></li>
-                                <li><Link to="/service2">Assignment Aid</Link></li>
-                            </ul>
-                        )}
-                    </div>
+                <div
+                    className={`servicesMenu ${subMenuOpen ? 'open' : ''}`}
+                    onClick={handleToggleSubMenu}
+                >
+                    {children}
+                    <IoIosArrowDown className={`arrow ${subMenuOpen ? 'rotate' : ''}`} style={{ paddingTop: "5px" }} />
+                    {subMenuOpen && (
+                        <ul className="sub-menu">
+                            <li><Link to="/service1">UnitTrust Consultation</Link></li>
+                            <li><Link to="/service2">Assignment Aid</Link></li>
+                        </ul>
+                    )}
+                </div>
             ) : (
                 <Link to={to} {...props}>
                     {children}
