@@ -4,7 +4,6 @@ import './Navbar.css';
 import logo from '../../assets/logo/sisLogo.png';
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 import { IoIosArrowDown} from "react-icons/io";
-import { BiBorderBottom } from "react-icons/bi";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -109,9 +108,20 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
                     <IoIosArrowDown className={`arrow ${subMenuOpen ? 'rotate' : ''}`} style={{ paddingTop: "5px" }} />
                     {subMenuOpen && (
                         <ul className="sub-menu">
-                            <li><Link to="/service1">UnitTrust Consultation</Link></li>
-                            <li><Link to="/service2">Assignment Aid</Link></li>
-                        </ul>
+                        <li className="submenu-item">
+                            <h2>Personal Services</h2>
+                            <ul className="inner-sub-menu">
+                                <li><Link to="/service1">UnitTrust Consultation</Link></li>
+                                <li><Link to="/service2">Assignment Aid</Link></li>
+                            </ul>
+                        </li>
+                        <li className="submenu-item">
+                            <h2>Team Services</h2>
+                            <ul className="inner-sub-menu">
+                                <li><Link to="/service3">e Business Card</Link></li>
+                            </ul>
+                        </li>
+                    </ul>
                     )}
                 </div>
             ) : (

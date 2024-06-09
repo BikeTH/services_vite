@@ -107,6 +107,25 @@ nav .menu {
     white-space: nowrap;
 }
 
+.submenu-item{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.submenu-item h2{
+    font-size: 24px;
+}
+
+.inner-sub-menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-sub-menu li{
+    align-items: center;
+    text-align: center;
+}
+
 /* Media query for smaller screens */
 @media screen and (max-width: 960px) {
     nav .menu {
