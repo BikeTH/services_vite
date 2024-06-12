@@ -13,16 +13,10 @@ export default function Navbar() {
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
-        if (!menuOpen) {
-            document.body.classList.add('nav-open');
-        } else {
-            document.body.classList.remove('nav-open');
-        }
     };
 
     const handleLinkClick = () => {
         setMenuOpen(false);
-        document.body.classList.remove('nav-open');
     };
 
     useEffect(() => {
@@ -46,7 +40,7 @@ export default function Navbar() {
     const opacity = scrollPosition / maxScroll > 1 ? 1 : scrollPosition / maxScroll;
 
     return (
-        <nav className="nav" style={{ backgroundColor: `rgba(40, 44, 48, ${opacity})` }}>
+        <nav className="nav" style={{backgroundColor: `rgba(40, 44, 48, ${opacity})` }}>
             <Link to="/">
                 <img src={logo} alt="myLogo" className="nav-logo" />
             </Link>
@@ -101,8 +95,7 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
     };
 
     const handleLinkClick = () => {
-        setSubMenuOpen(false);
-        document.body.classList.remove('nav-open');
+        setMenuOpen(false);
     };
 
     useEffect(() => {
