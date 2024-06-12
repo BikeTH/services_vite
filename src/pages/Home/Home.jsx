@@ -5,15 +5,8 @@ import LogoSlider from "../../components/carousel/LogoSlider";
 import UTC from "../../components/card/services/UTC";
 import AssignmentHelper from "../../components/card/services/AssignHelper";
 import ComingSoon from "../../components/card/services/ComingSoon";
-import UTstructure from "./UTstructure/UT";
-import UTcalculator from "./UTstructure/UTCalculator/UTcalculator";
 import Footer from "../../components/footer/Footer";
-import { SwiperNavNext, SwiperNavPrev } from "../../components/swipperButton/swiperButton";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import AHstructure from "./AHstructure/AH";
-import AHplayground from "./AHstructure/AHplayground/AHplayground";
 import sisLogo from "../../assets/logo/sisLogo.png";
 
 export default function Home() {
