@@ -1,37 +1,43 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/logo/sisLogo.png';
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
-import { IoIosArrowDown} from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import { GoArrowRight } from "react-icons/go";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const location= useLocation();
+    const location = useLocation();
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
+        if (!menuOpen) {
+            document.body.classList.add('nav-open');
+        } else {
+            document.body.classList.remove('nav-open');
+        }
     };
 
     const handleLinkClick = () => {
         setMenuOpen(false);
+        document.body.classList.remove('nav-open');
     };
 
-    useEffect(() =>{
-        window.scrollTo(0,0);
+    useEffect(() => {
+        window.scrollTo(0, 0);
     }, [location]);
 
-    useEffect(() =>{
+    useEffect(() => {
         const handleScroll = () => {
             const position = window.scrollY;
             setScrollPosition(position);
-        }
+        };
 
-        window.addEventListener('scroll', handleScroll, { passive: true});
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
-        return() => {
+        return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
@@ -40,9 +46,9 @@ export default function Navbar() {
     const opacity = scrollPosition / maxScroll > 1 ? 1 : scrollPosition / maxScroll;
 
     return (
-        <nav className="nav" style={{backgroundColor: `rgba(40, 44, 48, ${opacity})`}}>
+        <nav className="nav" style={{ backgroundColor: `rgba(40, 44, 48, ${opacity})` }}>
             <Link to="/">
-                <img src={logo} alt="myLogo" className="nav-logo"/>
+                <img src={logo} alt="myLogo" className="nav-logo" />
             </Link>
             <div className="menu" onClick={toggleMenu}>
                 {menuOpen ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
@@ -50,7 +56,7 @@ export default function Navbar() {
             <ul className={menuOpen ? "open" : ""}>
                 <CustomLink to="/" onClick={handleLinkClick}>Home</CustomLink>
                 <CustomLink to="/about" onClick={handleLinkClick}>About</CustomLink>
-                <CustomLink style={{backgroundColor:'inherit', transform:'none', boxShadow:'none', borderBottom: 'none'}}hasSubMenu>Services</CustomLink>
+                <CustomLink style={{ backgroundColor: 'inherit', transform: 'none', boxShadow: 'none', borderBottom: 'none' }} hasSubMenu>Services</CustomLink>
                 <CustomLink to="/contact" onClick={handleLinkClick}>Contact</CustomLink>
             </ul>
         </nav>
@@ -95,7 +101,8 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
     };
 
     const handleLinkClick = () => {
-        setMenuOpen(false);
+        setSubMenuOpen(false);
+        document.body.classList.remove('nav-open');
     };
 
     useEffect(() => {

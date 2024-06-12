@@ -5,7 +5,7 @@
     background-size: cover;
     background-position: center;
     opacity: 0.9;
-    padding-top: 50px;
+    padding-top: 5%;
     padding-bottom: 20px;
     overflow: hidden;
 }
@@ -215,7 +215,17 @@
     }
 }
 
+@media screen and (max-width: 960px) {
+    .container-home{
+        padding-top: 10%;
+    }
+}
+
 @media screen and (max-width: 800px) {
+    .container-home{
+        padding-top: 15%;
+    }
+
     .servicesAll{
         background-color: black;
         display: block;
