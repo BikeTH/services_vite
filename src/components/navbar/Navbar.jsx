@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/logo/sisLogo.png';
@@ -61,9 +61,6 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
     const [subMenuOpen, setSubMenuOpen] = useState(false);
     const [subMenuWay, setSubMenuWay] = useState(window.innerWidth <= 960);
-    const [hover, setHover] = useState(false);
-    const descriptionBoxRef = useRef(null);
-    const subMenuRef = useRef(null);
 
     useEffect(() => {
         const handleSubMenuWay = () => {
@@ -95,17 +92,6 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
         }
     };
 
-    const handleHoverDescriptionShow = () => {
-        setHover(true);
-        if (descriptionBoxRef.current && subMenuRef.current) {
-            descriptionBoxRef.current.style.height = `${subMenuRef.current.offsetHeight}px`;
-        }
-    }
-
-    const handleHoverDescriptionHide = () => {
-        setHover(false);
-    }
-
     return (
         <li
             className={isActive ? "active" : ""}
@@ -121,20 +107,11 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
                     {children}
                     <IoIosArrowDown className={`arrow ${subMenuOpen ? 'rotate' : ''}`} style={{ paddingTop: "5px" }} />
                     {subMenuOpen && (
-                        <ul className="sub-menu" ref={subMenuRef}>
+                        <ul className="sub-menu">
                         <li className="submenu-item">
                             <h2>Personal Services</h2>
                             <ul className="inner-sub-menu">
-                                <li onMouseEnter={handleHoverDescriptionShow} onMouseLeave={handleHoverDescriptionHide}>
-                                    <Link to="/UTConsult">UnitTrust Consultation</Link>
-                                    {hover && (
-                                        <div className="Description" ref={descriptionBoxRef}>
-                                            <p></p>
-                                            <hr />
-
-                                        </div>
-                                    )}
-                                </li>
+                                <li><Link to="/UTConsult">UnitTrust Consultation</Link></li>
                             </ul>
                         </li>
                         <li className="submenu-item">
