@@ -4,6 +4,7 @@ import './Navbar.css';
 import logo from '../../assets/logo/sisLogo.png';
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 import { IoIosArrowDown} from "react-icons/io";
+import { GoArrowRight } from "react-icons/go";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -61,6 +62,7 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
     const [subMenuOpen, setSubMenuOpen] = useState(false);
     const [subMenuWay, setSubMenuWay] = useState(window.innerWidth <= 960);
+    const location = useLocation();
 
     useEffect(() => {
         const handleSubMenuWay = () => {
@@ -92,6 +94,14 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
         }
     };
 
+    const handleLinkClick = () => {
+        setMenuOpen(false);
+    };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
         <li
             className={isActive ? "active" : ""}
@@ -108,24 +118,33 @@ function CustomLink({ to, children, hasSubMenu, style, ...props }) {
                     <IoIosArrowDown className={`arrow ${subMenuOpen ? 'rotate' : ''}`} style={{ paddingTop: "5px" }} />
                     {subMenuOpen && (
                         <ul className="sub-menu">
-                        <li className="submenu-item">
-                            <h2>Personal Services</h2>
-                            <ul className="inner-sub-menu">
-                                <li><Link to="/UTConsult">UnitTrust Consultation</Link></li>
-                            </ul>
-                        </li>
-                        <li className="submenu-item">
-                            <h2>Team Services</h2>
-                            <ul className="inner-sub-menu">
-                                <li><Link to="/CSAid">Assignment Aid</Link></li>
-                                <li><Link to="/digitalcard">e Business Card</Link></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            <li className="submenu-item">
+                                <h2>Personal Services</h2>
+                                <ul className="inner-sub-menu">
+                                    <li>
+                                        <Link to="/UTConsult" onClick={handleLinkClick}>UnitTrust Consultation</Link>
+                                        <span className="right-arrow"><GoArrowRight /></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="submenu-item">
+                                <h2>Team Services</h2>
+                                <ul className="inner-sub-menu">
+                                    <li>
+                                        <Link to="/CSAid" onClick={handleLinkClick}>Assignment Aid</Link>
+                                        <span className="right-arrow"><GoArrowRight /></span>
+                                    </li>
+                                    <li>
+                                        <Link to="/digitalcard" onClick={handleLinkClick}>e Business Card</Link>
+                                        <span className="right-arrow"><GoArrowRight /></span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     )}
                 </div>
             ) : (
-                <Link to={to} {...props}>
+                <Link to={to} onClick={handleLinkClick} {...props}>
                     {children}
                 </Link>
             )}
