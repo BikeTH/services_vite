@@ -2,6 +2,7 @@ import React from "react";
 import AHstructure from "./AHstructure/AH";
 import AHplayground from "./AHstructure/AHplayground/AHplayground";
 import { Link } from "react-router-dom";
+import './CSAid.css';
 
 export default function CSAid(){
     return(

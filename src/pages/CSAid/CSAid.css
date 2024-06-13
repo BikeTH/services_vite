@@ -1,0 +1,60 @@
+.Intro-AH{
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.Intro-AH h1{
+    color: #9fef00;
+}
+
+.Intro-AH p{
+    color: whitesmoke;
+}
+
+.CS-playground{
+    background-color: #EAEAEA;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.Summary-AH{
+    background-color: black;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.Summary-AH h1{
+    text-align: left;
+    color:#9fef00;
+}
+
+.Summary-AH span{
+    color: whitesmoke;
+    text-align: left;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 880px) {
+    .Intro-AH{
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: justify;
+    }
+
+    .Summary-AH{
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: justify;
+    }
+
+    .CS-playground{
+        padding: 0;
+    }
+}

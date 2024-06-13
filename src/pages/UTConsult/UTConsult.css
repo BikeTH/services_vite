@@ -1,0 +1,85 @@
+.Intro-UT{
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.Intro-UT h1{
+    color: #9fef00;
+}
+
+.Intro-UT p{
+    color: whitesmoke;
+}
+
+.calculator-UT{
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.Summary-UT{
+    background-color: black;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.Summary-UT h1{
+    color:#9fef00;
+}
+
+.Summary-UT span{
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.Contact-UT{
+    background-color: black;
+    color: #9fef00;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contact-button:hover {
+    background-color: #9fef00;
+    color: black;
+}
+
+@media screen and (max-width: 1200px) {
+    .calculator-UT{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .CS-playground{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media screen and (max-width: 880px){
+    .Intro-UT{
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: justify;
+    }
+
+    .calculator-UT{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .Summary-UT{
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: justify;
+    }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import UTstructure from "./UTstructure/UT";
 import UTcalculator from "./UTstructure/UTCalculator/UTcalculator";
 import { Link } from "react-router-dom";
+import './UTConsult.css';
 
 export default function UTConsult(){
     return(
