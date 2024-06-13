@@ -157,8 +157,10 @@ export default function Home() {
                 <h1>Tech used</h1>
                 <LogoSlider />
             </div>
-            <div className="Contact-UT">
-                <h1>Feel free to reach me out for free consultation!</h1>
+            <div className="Contact-landing">
+                <h1>Reach me Out!</h1>
+                <p>I'd love to hear from you! Whether you have a question, a project idea, or just want to say hello, feel free to get in touch. 
+                    I'm always excited to connect with new people and explore new opportunities.</p>
                     <Link to="/contact" className="contact-button">
                         Contact Me!
                     </Link>
