@@ -48,16 +48,22 @@ export default function Navbar() {
                 {menuOpen ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
             </div>
             <ul className={menuOpen ? "open" : ""}>
-                <CustomLink to="/" onClick={handleLinkClick}>Home</CustomLink>
-                <CustomLink to="/about" onClick={handleLinkClick}>About</CustomLink>
-                <CustomLink style={{ backgroundColor: 'inherit', transform: 'none', boxShadow: 'none', borderBottom: 'none' }} hasSubMenu>Services</CustomLink>
-                <CustomLink to="/contact" onClick={handleLinkClick}>Contact</CustomLink>
+                <CustomLink to="/" setMenuOpen={setMenuOpen}>Home</CustomLink>
+                <CustomLink to="/about" setMenuOpen={setMenuOpen}>About</CustomLink>
+                <CustomLink 
+                    style={{ backgroundColor: 'inherit', transform: 'none', boxShadow: 'none', borderBottom: 'none' }} 
+                    hasSubMenu
+                    setMenuOpen={setMenuOpen}
+                >
+                    Services
+                </CustomLink>
+                <CustomLink to="/contact" setMenuOpen={setMenuOpen}>Contact</CustomLink>
             </ul>
         </nav>
     );
 }
 
-function CustomLink({ to, children, hasSubMenu, style, ...props }) {
+function CustomLink({ to, children, hasSubMenu, style, setMenuOpen, ...props }) {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
     const [subMenuOpen, setSubMenuOpen] = useState(false);
