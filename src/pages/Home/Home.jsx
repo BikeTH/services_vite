@@ -2,16 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './home.css';
 import LogoSlider from "../../components/carousel/LogoSlider";
-import UTC from "../../components/card/services/UTC";
-import AssignmentHelper from "../../components/card/services/AssignHelper";
-import ComingSoon from "../../components/card/services/ComingSoon";
 import Footer from "../../components/footer/Footer";
 import 'swiper/swiper-bundle.css';
 import sisLogo from "../../assets/logo/sisLogo.png";
 import { MdOutlineWeb } from "react-icons/md";
 import { VscDebugConsole } from "react-icons/vsc";
-import { FaCoins } from "react-icons/fa";
+import { FaCoins, FaRegEye, FaCalendarCheck, FaBoxOpen } from "react-icons/fa";
+import { FaGear } from "react-icons/fa6";
+import { IoShieldCheckmark } from "react-icons/io5";
+import { BsFillLightningChargeFill } from "react-icons/bs";
 
+const ensures = [
+    {
+        id: 1,
+        symbol: <IoShieldCheckmark />,
+        title: "Quality",
+        context: "Top-notch standards for your satisfaction.",
+    },
+    {
+        id: 2,
+        symbol: <BsFillLightningChargeFill />,
+        title: "Fast Respond",
+        context: "Swift and efficient support, always.",
+    }
+]
 
 const services = [
     {
@@ -37,6 +51,37 @@ const services = [
     }
 ]
 
+const process = [
+    {
+        id: 1,
+        symbol: <FaRegEye />,
+        step: "1",
+        title: "Discovery",
+        context: "Conduct thorough research to understand client requirements and project goals.",
+    },
+    {
+        id: 2,
+        symbol: <FaCalendarCheck />,
+        step: "2",
+        title: "Planning",
+        context: "Develop a comprehensive plan outlining the project scope, timeline, and resources needed.",
+    },
+    {
+        id: 3,
+        symbol: <FaGear />,
+        step: "3",
+        title: "Execute",
+        context: "Implement the project plan, ensuring all tasks are completed on time and within budget.",
+    },
+    {
+        id: 4,
+        symbol: <FaBoxOpen />,
+        step: "4",
+        title: "Deliver",
+        context: "Finalize the project and deliver the completed product to the client, ensuring all expectations are met.",
+    }
+]
+
 export default function Home() {
 
     function scrollToServices(){
@@ -52,20 +97,30 @@ export default function Home() {
                 <p>I provide few services over here that you might be <span style={{fontWeight:'bold'}}>interested</span>!</p>
                 <button className="servicesButton" onClick={() => scrollToServices()}>Get started</button>
             </div>
-            <div className="home-logo-slider">
-                <LogoSlider />
-            </div>
-            <div id="servicesAll" className="servicesAll">
-                <UTC />
-                <AssignmentHelper />
-                <ComingSoon />
+            <div id="servicesAll" className="quick-arrangement">
+                <div className="quick-intro">
+                    <h2>Best solutions you can find here</h2>
+                    <p>We deliver top-notch solutions tailored to your needs, including <span>professional websites</span>,  
+                    <span> expert unit trust advice</span>, <span>computer science assignment help</span>, <span>reliable website hosting</span>, 
+                    and <span>innovative e-digital business cards</span>. Our expert team ensures you receive the highest quality service every time.</p>
+                    <div className="quick-guarantee-arrangement">
+                        {
+                            ensures.map(data => (
+                                <div className="quick-guarantee" key={data.id}>
+                                    <h1>{data.symbol}</h1>
+                                    <h2>{data.title}</h2>
+                                    <p>{data.context}</p>
+                                </div>
+                            ))
+                        }
+                    </div>  
+                </div>
+                <div className="quick-sp">
+                </div>
             </div>
             <div className="service-intro">
                 <h1>Our Services</h1>
                 <h2>We Provide a Wide Variety of Services</h2>
-                <p>We deliver top-notch solutions tailored to your needs, including professional websites, 
-                    expert unit trust advice, computer science assignment help, reliable website hosting, 
-                    and innovative e-digital business cards. Our expert team ensures you receive the highest quality service every time.</p>
                 <div className="service-arrangement">
                     {
                     services.map(data => (
@@ -78,6 +133,25 @@ export default function Home() {
                     ))
                 }
                 </div>
+            </div>
+            <div className="service-process">
+                <h1>Our Working Process</h1>
+                <h2>How we handle Our Projects</h2>
+                <div className="process-arrangement">
+                    {
+                        process.map(data => (
+                            <div className = "process-context" key={data.id}>
+                                <h1>{data.symbol}</h1>
+                                <h2>{data.title}</h2>
+                                <p>{data.context}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div className="home-logo-slider">
+                <h1>Tech used</h1>
+                <LogoSlider />
             </div>
             <div className="Contact-UT">
                 <h1>Feel free to reach me out for free consultation!</h1>

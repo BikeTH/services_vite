@@ -71,15 +71,52 @@
     color: black;
 }
 
-.servicesAll{
-    background-color: black;
+.quick-arrangement{
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
+    flex-direction: row;
+    padding: 50px;
+    padding-left: 15%;
+    padding-right: 15%;
+    gap: 50px;
+    background-color: whitesmoke;
+}
+
+.quick-guarantee h1{
+    color: blue;
+}
+
+.quick-intro{
+    width: 50%;
+}
+
+.quick-intro span{
+    color: blue;
+    font-weight: bold;
+}
+
+.quick-intro h2{
+    font-size: 32px;
+    color: black;
+}
+
+.quick-intro p{
+    color: black;
+}
+
+.quick-guarantee-arrangement{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.quick-sp{
+    background-image: url("../../assets/image/eparcel.jpg");
+    margin: 0;
+    padding: 0;
+    background-size: contain;
+    background-position: center;
+    border-radius: 20px;
+    height: 60vh; /* Sets the height to 60% of the viewport height */
+    width: 50%;
 }
 
 .service-intro{
@@ -94,6 +131,7 @@
 
 .service-intro h2{
     font-size: 32px;
+    margin-top: 0;
     color: whitesmoke;
 }
 
@@ -139,6 +177,65 @@
     text-align: left;
 }
 
+.service-process{
+    text-align: center;
+    background-color: white;
+    padding-bottom: 30px;
+}
+
+.service-process h1{
+    padding-top: 10px;
+    font-size: 20px;
+    color: rgb(0, 153, 255);
+}
+
+.service-process h2{
+    font-size: 32px;
+    margin-top: 0;
+    color: black;
+}
+
+.service-process p{
+    color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.process-arrangement{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.process-context{
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    border-width: 5px 3px 3px 5px;
+    border: 2px solid grey;
+    padding: 15px;
+    min-height: 300px;
+    min-width: 300px;
+    border-radius: 5px;
+}
+
+.process-context p{
+    padding: 0;
+}
+
+.process-context h1{
+    color: rgb(0, 153, 255);
+    font-size: 32px;
+}
+
+.process-context h2{
+    text-align: left;
+}
+
 .contact-button {
     display: inline-block;
     background-color: #4d525c;
@@ -154,7 +251,13 @@
     padding-bottom: 15px;
     animation: breathBorder 3s infinite alternate;
     transition: background-color 0.3s ease;
+}
 
+.home-logo-slider h1{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #9fef00;
 }
 
 @media screen and (max-width: 960px) {
