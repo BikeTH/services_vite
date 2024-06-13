@@ -82,6 +82,63 @@
     padding-right: 15px;
 }
 
+.service-intro{
+    text-align: center;
+}
+
+.service-intro h1{
+    padding-top: 10px;
+    font-size: 20px;
+    color: #9fef00;
+}
+
+.service-intro h2{
+    font-size: 32px;
+    color: whitesmoke;
+}
+
+.service-intro p{
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.service-arrangement{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.service-context{
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    border-width: 5px 3px 3px 5px;
+    border: 2px solid #9fef00;
+    border-bottom-color: #e5e5e5;
+    border-right-color: #e5e5e5;
+    padding: 15px;
+    min-height: 300px;
+    min-width: 300px;
+    border-radius: 5px;
+}
+
+.service-context p{
+    padding: 0;
+}
+
+.service-context h1{
+    color: white;
+}
+
+.service-context h2{
+    text-align: left;
+}
+
 .contact-button {
     display: inline-block;
     background-color: #4d525c;
