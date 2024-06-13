@@ -96,14 +96,18 @@
     display: flex;
     flex-direction: row;
     padding: 50px;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
     gap: 50px;
     background-color: whitesmoke;
 }
 
 .quick-guarantee h1{
     color: blue;
+}
+
+.quick-guarantee p{
+    text-align: left;
 }
 
 .quick-intro{
@@ -127,6 +131,7 @@
 .quick-guarantee-arrangement{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .quick-sp{
@@ -136,7 +141,7 @@
     background-size: contain;
     background-position: center;
     border-radius: 20px;
-    height: 60vh; /* Sets the height to 60% of the viewport height */
+    height: 50vh;
     width: 50%;
 }
 
@@ -279,6 +284,33 @@
     margin: 0;
 }
 
+.home-logo-slider h1{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #9fef00;
+}
+
+.Contact-landing {
+    position: relative; /* Ensure positioning context for the pseudo-element */
+    text-align: left;
+    padding: 50px;
+    color: black;
+}
+
+.Contact-landing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../assets/image/consult.jpg");
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
 .contact-button {
     display: inline-block;
     background-color: #4d525c;
@@ -296,32 +328,63 @@
     transition: background-color 0.3s ease;
 }
 
-.home-logo-slider h1{
-    text-align: center;
-    padding-top: 10px;
-    font-size: 20px;
-    color: #9fef00;
-}
-
-.Contact-landing{
-    background-image: url("../../assets/image/consult.jpg");
-    background-size: 100% 100%;
-    text-align: left;
-    padding: 50px;
-    color: black;
-}
-
-.Contact-landing h1{
+.Contact-landing h1 {
     margin: 0;
 }
 
-.Contact-landing p{
+.Contact-landing p {
     width: 45%;
+    position: relative;
+    z-index: 1;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.Contact-landing span{
+    color: #9fef00;
+}
+
+@media screen and (max-width: 1640px){
+    .quick-sp{
+        height: 50vh;
+    }
+}
+
+
+@media screen and (max-width: 1140px) {
+    .quick-guarantee h2{
+        font-size: 28px;
+    }
+
+    .quick-arrangement{
+        padding-left: 30px;
+        padding-right: 30px;
+        gap: 15px;
+    }
+
+    .quick-sp{
+        height: 50vh;
+    }
 }
 
 @media screen and (max-width: 960px) {
     .container-home{
         padding-top: 10%;
+    }
+
+    .quick-arrangement{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .service-arrangement{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-arrangement{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -330,20 +393,89 @@
         padding-top: 15%;
     }
 
-    .servicesAll{
-        background-color: black;
-        display: block;
-        justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .servicesAll > * {
-        margin-bottom: 30px;
+    .quick-arrangement{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
     }
 
-    .servicesAll > *:last-child {
-        margin-bottom: 0;
+    .quick-intro {
+        position: relative; /* Ensure positioning context for the pseudo-element */
+        width: 100%;
+    }
+
+    .quick-intro::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../../assets/image/eparcel.jpg");
+        background-size: 100% 100%;
+        opacity: 0.1; /* Adjust the opacity as needed */
+    }
+
+    .quick-intro * {
+        position: relative; /* Ensure text is above the pseudo-element */
+        z-index: 1;
+    }
+
+    .quick-intro h1{
+        text-align: center;
+    }
+
+    .quick-intro h2{
+        text-align: center;
+    }
+
+    .quick-intro p{
+        text-align: justify;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .quick-sp{
+        display: none;
+    }
+
+    .quick-guarantee h2{
+        font-size: 28px;
+    }
+
+    .service-arrangement{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .process-arrangement{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .process-arrangement > * {
+        min-width: calc(100% / 3); /* Ensure each grid item has a minimum width */
+    }
+
+    .Contact-landing {
+        position: relative; /* Ensure positioning context for the pseudo-element */
+        text-align: left;
+        padding: 10px;
+    }
+    
+    .Contact-landing::before {
+        opacity: 0.3;
+    }
+    
+    .Contact-landing h1 {
+        color:#9fef00;
+        margin: 0;
+    }
+    
+    .Contact-landing p {
+        font-weight: bolder;
+        width: 50%;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 }

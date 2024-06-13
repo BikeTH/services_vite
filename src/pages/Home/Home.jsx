@@ -159,7 +159,8 @@ export default function Home() {
             </div>
             <div className="Contact-landing">
                 <h1>Reach me Out!</h1>
-                <p>I'd love to hear from you! Whether you have a question, a project idea, or just want to say hello, feel free to get in touch. 
+                <p>I'd love to hear from you! Whether you have a <span>question</span>, a <span>project idea</span>, 
+                    or just want to <span>say Hello</span>, feel free to get in touch. 
                     I'm always excited to connect with new people and explore new opportunities.</p>
                     <Link to="/contact" className="contact-button">
                         Contact Me!
