@@ -71,6 +71,27 @@
     color: black;
 }
 
+.learnMore{
+    color: white;
+}
+
+.learnMore:hover{
+    color: #9fef00;
+}
+
+.navArrow{
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.learnMore:hover .navArrow{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 .quick-arrangement{
     display: flex;
     flex-direction: row;
@@ -120,11 +141,15 @@
 }
 
 .service-intro{
+    background-image: url("../../assets/image/services-banner.png");
+    background-size: 100% 100%;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .service-intro h1{
-    padding-top: 10px;
+    margin: 0;
+    padding-top: 20px;
     font-size: 20px;
     color: #9fef00;
 }
@@ -152,13 +177,12 @@
 }
 
 .service-context{
+    background-color: rgb(0,0,0, 0.5);
     align-items: center;
     justify-content: center;
     text-align: justify;
     border-width: 5px 3px 3px 5px;
-    border: 2px solid #9fef00;
-    border-bottom-color: #e5e5e5;
-    border-right-color: #e5e5e5;
+    border: 2px solid #e5e5e5;
     padding: 15px;
     min-height: 300px;
     min-width: 300px;
@@ -170,6 +194,7 @@
 }
 
 .service-context h1{
+    font-size: 32px;
     color: white;
 }
 
@@ -184,7 +209,8 @@
 }
 
 .service-process h1{
-    padding-top: 10px;
+    margin: 0;
+    padding-top: 20px;
     font-size: 20px;
     color: rgb(0, 153, 255);
 }
@@ -216,11 +242,24 @@
     justify-content: center;
     text-align: justify;
     border-width: 5px 3px 3px 5px;
-    border: 2px solid grey;
+    border: 2px solid rgb(238, 238, 238);
     padding: 15px;
     min-height: 300px;
     min-width: 300px;
-    border-radius: 5px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pcontext-arr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pcontext-arr h3{
+    top: 0;
+    right: 0;
+    color: rgb(0, 153, 255);
+    font-size: 30px;
 }
 
 .process-context p{
@@ -234,6 +273,10 @@
 
 .process-context h2{
     text-align: left;
+}
+
+.process-context h3{
+    margin: 0;
 }
 
 .contact-button {

@@ -11,6 +11,7 @@ import { FaCoins, FaRegEye, FaCalendarCheck, FaBoxOpen } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { IoShieldCheckmark } from "react-icons/io5";
 import { BsFillLightningChargeFill } from "react-icons/bs";
+import { GoArrowRight } from "react-icons/go";
 
 const ensures = [
     {
@@ -33,21 +34,21 @@ const services = [
         symbol: <MdOutlineWeb />,
         title: "IT Consulting",
         context: "Web development, e Business card, web hosting for enterprise or personal use",
-        url: <Link to="/digitalcard">Learn more</Link>,
+        url: <Link to="/digitalcard" className="learnMore">Learn more <span className="navArrow"><GoArrowRight/></span></Link>,
     },
     {
         id: 2,
         symbol: <VscDebugConsole />,
         title: "Assignment Aid",
         context: "Solving on complex assignment for CS/IT student with guidance",
-        url: <Link to="/CSAid">Learn more</Link>,
+        url: <Link to="/CSAid" className="learnMore">Learn more <span className="navArrow"><GoArrowRight/></span></Link>,
     },
     {
         id: 3,
         symbol: <FaCoins />,
         title: "Unit Trust Consultancy",
         context: "Unlock the potential of your savings by discover unit trusts offer to investors!",
-        url: <Link to="/UTConsult">Learn more</Link>,
+        url: <Link to="/UTConsult" className="learnMore">Learn more <span className="navArrow"><GoArrowRight/></span></Link>,
     }
 ]
 
@@ -85,7 +86,7 @@ const process = [
 export default function Home() {
 
     function scrollToServices(){
-        const servicesAll = document.getElementById('servicesAll');
+        const servicesAll = document.getElementById('servicesShorts');
         servicesAll.scrollIntoView({ behavior: 'smooth', block: 'start'});
     }    
 
@@ -97,7 +98,7 @@ export default function Home() {
                 <p>I provide few services over here that you might be <span style={{fontWeight:'bold'}}>interested</span>!</p>
                 <button className="servicesButton" onClick={() => scrollToServices()}>Get started</button>
             </div>
-            <div id="servicesAll" className="quick-arrangement">
+            <div id="servicesShorts" className="quick-arrangement">
                 <div className="quick-intro">
                     <h2>Best solutions you can find here</h2>
                     <p>We deliver top-notch solutions tailored to your needs, including <span>professional websites</span>,  
@@ -141,7 +142,10 @@ export default function Home() {
                     {
                         process.map(data => (
                             <div className = "process-context" key={data.id}>
-                                <h1>{data.symbol}</h1>
+                                <div className="pcontext-arr">
+                                    <h1>{data.symbol}</h1>
+                                    <h3>{data.step}</h3>
+                                </div>
                                 <h2>{data.title}</h2>
                                 <p>{data.context}</p>
                             </div>
