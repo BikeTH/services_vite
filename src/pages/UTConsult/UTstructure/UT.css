@@ -140,6 +140,26 @@
     padding:50px;
 }
 
+.variety-service{
+    padding-top: 20px;
+    color: black;
+    text-align: center;
+}
+
+.variety-service h1{
+    font-size: 20px;
+    margin: 0;
+}
+
+.variety-service h2{
+    font-size: 32px;
+    margin: 0;
+}
+
+.map-service{
+    width: 50%;
+    transform: translateX(50%);
+}
 
 @media screen and (max-width: 1440px) {
     .UT-feature-arrangement {

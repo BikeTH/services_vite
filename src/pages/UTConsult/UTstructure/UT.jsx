@@ -4,6 +4,7 @@ import { MdDiversity2, MdManageAccounts, MdOutlineSavings } from "react-icons/md
 import { PiCoinVerticalBold } from "react-icons/pi";
 import { GrPlan, GrMultiple } from "react-icons/gr";
 import { GiBubblingFlask } from "react-icons/gi";
+import { ComposableMap, Geographies, Geography, ZoomableGroup, Marker } from "react-simple-maps";
 
 const features = [
     {
@@ -56,6 +57,47 @@ const solution = [
     }
 ];
 
+const markers = [
+    {
+        id: "Malaysia",
+        coordinates: [103.3816, 3.5],
+    },
+    {
+        id: "Thailand",
+        coordinates: [100, 15]
+    },
+    {
+        id: "Indonesia",
+        coordinates: [108, -4]
+    },
+    {
+        id: "Australia",
+        coordinates: [135, -25]
+    },
+    {
+        id: "China",
+        coordinates: [100, 35]
+    },
+    {
+        id: "Japan",
+        coordinates: [140, 40]
+    },
+    {
+        id: "Korea",
+        coordinates: [126, 36]
+    },
+    {
+        id: "Taiwan",
+        coordinates: [120, 22]
+    },
+    {
+        id: "US",
+        coordinates: [-100, 38]
+    }
+];
+
+const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+
 export default function UTstructure() {
     return (
         <>
@@ -91,6 +133,27 @@ export default function UTstructure() {
                             <div className="solution-image" style={{backgroundImage: `url(${data.image})`}} />
                         </div>
                     ))}
+                </div>
+            </div>
+            <div className="variety-service">
+                <h1>Funds Coverage</h1>
+                <h2>Multi-National Funds Combination</h2>
+                <div className="map-service">
+                    <ComposableMap data-tip="">
+                        <Geographies geography={geoUrl}>
+                            {({ geographies }) =>
+                                geographies.map((geo) => (
+                                <Geography key={geo.rsmKey} geography={geo} />
+                                ))
+                                }
+                        </Geographies>
+                        {markers.map(data => (
+                                <Marker key={data.id} coordinates={data.coordinates}>
+                                    <circle r={7} fill="red" stroke="white" strokeWidth={2}/>
+                                </Marker>
+                            ))
+                        }    
+                    </ComposableMap>
                 </div>
             </div>
         </>
