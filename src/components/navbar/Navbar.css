@@ -24,6 +24,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.nav.utconsult-nav {
+    color: black;
+}
+
 .nav ul {
     padding: 0;
     margin: 0;
@@ -73,7 +77,6 @@ nav .menu {
 .servicesMenu{
     padding-top: 7.5px;
     cursor: pointer;
-    color: whitesmoke;
     position: relative;
 }
 

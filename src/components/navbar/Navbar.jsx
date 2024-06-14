@@ -10,6 +10,7 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const location = useLocation();
+    const isUTConsultPage = location.pathname === "/UTConsult";
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -38,20 +39,22 @@ export default function Navbar() {
 
     const maxScroll = 300;
     const opacity = scrollPosition / maxScroll > 1 ? 1 : scrollPosition / maxScroll;
+    const colorValue = isUTConsultPage ? Math.min(255, Math.floor(opacity * 255)) : 255;
+    const textColor = isUTConsultPage ? `rgb(${colorValue}, ${colorValue}, ${colorValue})` : 'inherit';
 
     return (
-        <nav className="nav" style={{backgroundColor: `rgba(40, 44, 48, ${opacity})` }}>
+        <nav className={`nav ${isUTConsultPage ? 'utconsult-nav' : ''}`} style={{backgroundColor: `rgba(40, 44, 48, ${opacity})` }}>
             <Link to="/">
                 <img src={logo} alt="myLogo" className="nav-logo" />
             </Link>
             <div className="menu" onClick={toggleMenu}>
                 {menuOpen ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
             </div>
-            <ul className={menuOpen ? "open" : ""}>
+            <ul className={menuOpen ? "open" : ""} style={{ color: textColor }}>
                 <CustomLink to="/" setMenuOpen={setMenuOpen}>Home</CustomLink>
                 <CustomLink to="/about" setMenuOpen={setMenuOpen}>About</CustomLink>
-                <CustomLink 
-                    style={{ backgroundColor: 'inherit', transform: 'none', boxShadow: 'none', borderBottom: 'none' }} 
+                <CustomLink
+                    style={{ backgroundColor: 'inherit', transform: 'none', boxShadow: 'none', borderBottom: 'none', color: textColor }} 
                     hasSubMenu
                     setMenuOpen={setMenuOpen}
                 >
