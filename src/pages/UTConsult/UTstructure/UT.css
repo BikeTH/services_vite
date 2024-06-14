@@ -112,6 +112,7 @@
 .UT-solution{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap:0;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
@@ -123,15 +124,18 @@
 
 .UT-solution p{
     color: white;
+    padding: 10px;
 }
 
 .UT-solution .solution-image {
-    width: 50%;
+    width: 70%;
     height: 300px;
     background-size: cover;
     background-position: center;
-    transform: translateX(50%);
+    transform: translateX(30%);
+    border-radius: 15px;
 }
+
 .solution-content{
     padding:50px;
 }
