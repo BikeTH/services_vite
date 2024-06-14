@@ -141,7 +141,7 @@
     background-size: contain;
     background-position: center;
     border-radius: 20px;
-    height: 50vh;
+    max-height: 50vh;
     width: 50%;
 }
 
@@ -255,6 +255,23 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
+.process-context:hover{
+    background-color: black;
+    transform: scale(1.1);
+    transition: background-color 0.5s ease;
+}
+
+.process-context:hover h1,
+.process-context:hover h2,
+.process-context:hover h3{
+    color: #9fef00;
+    transition: background-color 0.5s ease;
+}
+
+.process-context:hover p{
+    color: white;
+}
+
 .pcontext-arr{
     display: flex;
     justify-content: space-between;
@@ -307,7 +324,7 @@
     bottom: 0;
     background-image: url("../../assets/image/consult.jpg");
     background-size: 100% 100%;
-    opacity: 0.5;
+    opacity: 0.4;
     z-index: -1;
 }
 
@@ -333,6 +350,7 @@
 }
 
 .Contact-landing p {
+    font-weight: bold;
     width: 45%;
     position: relative;
     z-index: 1;
@@ -346,12 +364,12 @@
 
 @media screen and (max-width: 1640px){
     .quick-sp{
-        height: 50vh;
+        max-height: 50vh;
     }
 }
 
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1150px) {
     .quick-guarantee h2{
         font-size: 28px;
     }
@@ -363,7 +381,17 @@
     }
 
     .quick-sp{
-        height: 50vh;
+        max-height: 50vh;
+    }
+
+    .service-arrangement{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-arrangement{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -375,16 +403,6 @@
     .quick-arrangement{
         padding-left: 30px;
         padding-right: 30px;
-    }
-    
-    .service-arrangement{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .process-arrangement{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 

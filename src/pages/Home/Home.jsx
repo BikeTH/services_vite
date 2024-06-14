@@ -33,7 +33,7 @@ const services = [
         id: 1,
         symbol: <MdOutlineWeb />,
         title: "IT Consulting",
-        context: "Web development, e Business card, web hosting for enterprise or personal use",
+        context: "Web development, E-Business Card, Web Hosting for enterprise or personal use",
         url: <Link to="/digitalcard" className="learnMore">Learn more <span className="navArrow"><GoArrowRight/></span></Link>,
     },
     {
@@ -94,8 +94,8 @@ export default function Home() {
         <>
             <div className="container-home">
                 <h1><img src={sisLogo} alt="SIS Logo" className="sis-logo" /></h1>
-                <h1>My Services</h1>
-                <p>I provide few services over here that you might be <span style={{fontWeight:'bold'}}>interested</span>!</p>
+                <h1>What We Offer</h1>
+                <p>We provide a few services over here that you might be <span style={{fontWeight:'bold'}}>interested</span> in!</p>
                 <button className="servicesButton" onClick={() => scrollToServices()}>Get started</button>
             </div>
             <div id="servicesShorts" className="quick-arrangement">
