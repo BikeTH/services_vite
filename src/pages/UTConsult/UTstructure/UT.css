@@ -39,3 +39,126 @@
     width: 40%;
     z-index: 1;
 }
+
+.UT-feature{
+    background-color: black;
+}
+
+.UT-feature-arrangement{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    min-height: 200px;
+    gap: 50px;
+    padding: 0 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.Intro-UT{
+    background-color: black;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.Intro-UT h1{
+    text-align: center;
+    color: #9fef00;
+}
+
+.Intro-UT p{
+    align-items: center;
+    margin: 0;
+    color: whitesmoke;
+}
+
+.UT-symbol{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    top:0;
+    color: white;
+    background-color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 400px;
+    border-radius: 20px;
+    border-width: 5px 3px 3px 5px;
+    border: 2px solid #9fef00;
+    border-bottom-color: #e5e5e5;
+    border-right-color: #e5e5e5;
+}
+
+.UT-feature h1{
+    font-size: 1.5rem;
+}
+
+.UT-feature p{
+    text-align: left;
+    font-size: 1rem;
+}
+
+.UT-solution-arrangement{
+    padding-top: 20px;
+}
+
+.UT-solution-arrangement h1{
+    color: #9fef00;
+    text-align: center;
+}
+
+.UT-solution{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.UT-solution h1{
+    color: white;
+}
+
+.UT-solution p{
+    color: white;
+}
+
+.UT-solution .solution-image {
+    width: 50%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(50%);
+}
+.solution-content{
+    padding:50px;
+}
+
+
+@media screen and (max-width: 1440px) {
+    .UT-feature-arrangement {
+        grid-template-columns: repeat(2, 2fr);
+    }
+}
+
+@media screen and (max-width: 880px){
+    .Intro-UT{
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .UT-feature-arrangement {
+        display: block;
+    }
+    .UT-feature-arrangement > * {
+        margin-bottom: 10px;
+    }
+    .UT-feature-arrangement > *:last-child {
+        margin-bottom: 0;
+    }
+}

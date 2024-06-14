@@ -93,8 +93,8 @@
 
 
 .quick-arrangement{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     padding: 50px;
     padding-left: 10%;
     padding-right: 10%;
@@ -110,9 +110,6 @@
     text-align: left;
 }
 
-.quick-intro{
-    width: 50%;
-}
 
 .quick-intro span{
     color: blue;
@@ -138,11 +135,10 @@
     background-image: url("../../assets/image/eparcel.jpg");
     margin: 0;
     padding: 0;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     border-radius: 20px;
     max-height: 50vh;
-    width: 50%;
 }
 
 .service-intro{
@@ -313,6 +309,8 @@
     text-align: left;
     padding: 50px;
     color: black;
+    background-color: white;
+    z-index: -1;
 }
 
 .Contact-landing::before {
@@ -324,7 +322,7 @@
     bottom: 0;
     background-image: url("../../assets/image/consult.jpg");
     background-size: 100% 100%;
-    opacity: 0.4;
+    opacity: 0.8;
     z-index: -1;
 }
 
@@ -359,7 +357,7 @@
 }
 
 .Contact-landing span{
-    color: #9fef00;
+    color: blue;
 }
 
 @media screen and (max-width: 1640px){

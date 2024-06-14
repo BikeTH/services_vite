@@ -116,8 +116,7 @@ export default function Home() {
                         }
                     </div>  
                 </div>
-                <div className="quick-sp">
-                </div>
+                <div className="quick-sp"/>
             </div>
             <div className="service-intro">
                 <h1>Our Services</h1>
@@ -159,7 +158,7 @@ export default function Home() {
             </div>
             <div className="Contact-landing">
                 <h1>Reach me Out!</h1>
-                <p>I'd love to hear from you! Whether you have a <span>question</span>, a <span>project idea</span>, 
+                <p>I'd love to hear from you! Whether you have a <span>Question</span>, a <span>Project Idea</span>, 
                     or just want to <span>say Hello</span>, feel free to get in touch. 
                     I'm always excited to connect with new people and explore new opportunities.</p>
                     <Link to="/contact" className="contact-button">

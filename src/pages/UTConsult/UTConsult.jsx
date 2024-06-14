@@ -9,11 +9,6 @@ export default function UTConsult(){
         <>
         <div id="servicesUT" className="servicesUT">
                     <UTstructure />
-                    <div className="Intro-UT">
-                        <h1>What are Unit Trusts?</h1>
-                        <p>Unit trust are investment funds that allow investors to pool their money together to invest in a diversified portfolio of assets such as stocks, bonds, or other securities</p>
-                        <p>These funds are managed by professional fund managers who make investment decisions on behalf of the investors.</p>
-                    </div>
                     <div className="calculator-UT">
                         <UTcalculator />
                     </div>
