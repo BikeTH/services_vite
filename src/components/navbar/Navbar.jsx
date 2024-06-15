@@ -144,7 +144,7 @@ function CustomLink({ to, children, hasSubMenu, style, setMenuOpen, ...props }) 
                                         <span className="right-arrow"><GoArrowRight /></span>
                                     </li>
                                     <li>
-                                        <Link to="/digitalcard" onClick={handleLinkClick}>e Business Card</Link>
+                                        <Link to="/ITconsult" onClick={handleLinkClick}>IT Consulting</Link>
                                         <span className="right-arrow"><GoArrowRight /></span>
                                     </li>
                                 </ul>

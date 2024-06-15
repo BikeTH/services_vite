@@ -40,6 +40,11 @@ const solution = [
         symbol: <GrPlan />,
         title: "Financial Planning Services",
         context: "We focus on identifying effective strategies and financial solutions for wealth advisors and investors to reach their financial goals. Our services offer access to diverse global investments, currency exposure, and tax benefits without initial capital requirements.",
+        badge: (
+            <>
+                <h1></h1>
+            </>
+        )
     },
     {
         id: 2,
@@ -47,6 +52,11 @@ const solution = [
         symbol: <GrMultiple />,
         title: "Asset Allocation",
         context: "Ensures precise distribution of wealth and legacy during and after one's lifetime, all for a minimal fee, providing confidence in the transfer of investments to loved ones.",
+        badge: (
+            <>
+                <h1></h1>
+            </>
+        )
     },
     {
         id: 3,
@@ -54,6 +64,11 @@ const solution = [
         symbol: <GiBubblingFlask />,
         title: "Research & Supports",
         context: "Our aim is to provide you, the wealth advisor, with expert insights, keeping you updated on global market trends. With this knowledge, we can develop a tailored wealth plan aligned with your objectives, facilitating effective implementation of recommendations.",
+        badge: (
+            <>
+                <h1></h1>
+            </>
+        )
     }
 ];
 

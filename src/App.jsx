@@ -5,7 +5,7 @@ import Contact from "./pages/Contact/Contact"
 import Home from "./pages/Home/Home"
 import UTConsult from "./pages/UTConsult/UTConsult"
 import CSAid from "./pages/CSAid/CSAid"
-import DigitalCard from "./pages/DigitalCard/DigitalCard"
+import ITconsult from "./pages/ITconsult/ITconsult"
 import Navbar from "./components/navbar/Navbar"
 import NavToTop from "./components/toTop/NavToTop"
 
@@ -20,7 +20,7 @@ export default function App(){
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/UTConsult" element={<UTConsult />} />
                     <Route path="/CSAid" element={<CSAid />} />
-                    <Route path="/digitalcard" element={<DigitalCard />} />
+                    <Route path="/ITconsult" element={<ITconsult />} />
                 </Routes>
             </div>
             <NavToTop />

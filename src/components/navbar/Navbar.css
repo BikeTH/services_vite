@@ -169,6 +169,10 @@ body.nav-open {
         z-index: 1001;
     }
 
+    .nav li{
+        color: white;
+    }
+
     .servicesMenu{
         cursor: pointer;
         color: #808080;

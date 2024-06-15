@@ -8,23 +8,6 @@
     padding-right: 25%;
 }
 
-.Summary-UT{
-    background-color: black;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-.Summary-UT h1{
-    color:#9fef00;
-}
-
-.Summary-UT span{
-    color: whitesmoke;
-    font-size: 20px;
-}
-
 .Contact-UT{
     background-color: black;
     color: #9fef00;
@@ -40,6 +23,100 @@
     color: black;
 }
 
+.faq-UT-arrangement {
+    text-align: center;
+    padding: 50px;
+}
+
+.faq-UT-arrangement h1 {
+    font-weight: bolder;
+    color: black;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.faq-UT-arrangement h2 {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.faq-UT {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-UT div {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.faq-UT div h3 {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.faq-UT div > div {
+    display: none;
+    margin-top: 10px;
+    color: #333;
+}
+
+.faq-UT div.active > div {
+    display: block;
+    background-color: #eee;
+}
+
+.faq-UT div:hover {
+    background-color: #eee;
+}
+
+.faq-UT div h3 .icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-UT div.active h3 .icon {
+    transform: rotate(45deg);
+}
+
+.last-UT{
+    position: relative;
+    min-height: 250px;
+}
+
+.last-UT::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../assets/image/UTlast.jpg");
+    background-size: 100% auto;
+    opacity: 0.6;
+}
+
+.last-UT h1{
+    transform: translate(50%, 20%);
+    max-width: 700px;
+    font-size: 28px;
+    margin: 0;
+    color: black;
+}
+
+.last-UT p{
+    transform: translate(50%, 20%);
+    max-width: 700px;
+    color: black;
+}
+
 @media screen and (max-width: 1200px) {
     .calculator-UT{
         padding-left: 0;
@@ -49,6 +126,20 @@
     .CS-playground{
         padding-left: 5%;
         padding-right: 5%;
+    }
+
+    .last-UT h1{
+        transform: translate(10%, 20%);
+        max-width: 700px;
+        font-size: 28px;
+        margin: 0;
+        color: black;
+    }
+    
+    .last-UT p{
+        transform: translate(10%, 20%);
+        max-width: 700px;
+        color: black;
     }
 }
 
@@ -68,5 +159,31 @@
         padding-left: 25px;
         padding-right: 25px;
         text-align: justify;
+    }
+
+    .last-UT h1{
+        transform: translate(0%, 0%);
+        padding-left: 20px;
+        width: 100%;
+        font-size: 28px;
+        margin: 0;
+        color: black;
+    }
+    
+    .last-UT p{
+        transform: translate(0%, 0%);
+        padding-left: 20px;
+        width: 100%;
+        color: black;
+    }
+
+    .last-UT{
+        position: relative;
+        min-height: 150px;
+    }
+    
+    .last-UT::before {
+        background-size: auto;
+        background-position: 50% 25%;
     }
 }

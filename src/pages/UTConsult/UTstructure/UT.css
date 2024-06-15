@@ -125,6 +125,8 @@
 .UT-solution p{
     color: white;
     padding: 10px;
+    max-width: 700px;
+    text-align: justify;
 }
 
 .UT-solution .solution-image {
@@ -132,12 +134,12 @@
     height: 300px;
     background-size: cover;
     background-position: center;
-    transform: translateX(30%);
     border-radius: 15px;
 }
 
 .solution-content{
     padding:50px;
+    padding-right: 0;
 }
 
 .variety-service{
@@ -163,19 +165,78 @@
 
 @media screen and (max-width: 1440px) {
     .UT-feature-arrangement {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        padding: 0 20px;
+        min-height: 200px;
     }
+
+    .UT-symbol{
+        max-width: 600px;
+    }
+
+    .UT-structure h1{
+        padding-top: 20px;
+        width: 60%;
+    }
+    
+    .UT-structure p{
+        width: 60%;
+    }
+    
 }
 
-@media screen and (max-width: 880px){
+@media screen and (max-width: 960px){
     .Intro-UT{
         padding-left: 25px;
         padding-right: 25px;
         text-align: justify;
     }
+
+    .UT-structure h1{
+        width: 80%;
+    }
+    
+    .UT-structure p{
+        width: 80%;
+    }
+
+    .UT-symbol{
+        max-width: 500px;
+    }
+
+    .UT-solution{
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 20px;
+        transform: translateX(0);
+    }
+
+    .UT-solution .solution-image {
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 15px;
+        padding-right: 20px;
+    }
+    
+    .solution-content{
+        padding:0;
+    }
+
+    .map-service{
+        width: 80%;
+        transform: translateX(10%);
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .UT-structure::before {
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+    }
+
     .UT-feature-arrangement {
         display: block;
     }
@@ -184,5 +245,31 @@
     }
     .UT-feature-arrangement > *:last-child {
         margin-bottom: 0;
+    }
+
+    .UT-symbol{
+        max-width: 100%;
+    }
+
+    .UT-structure{
+        height: auto;
+        padding: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .UT-structure h1{
+        padding-top: 50px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .UT-structure p{
+        text-align: center;
+        width: 100%;
+    }
+
+    .UT-solution .solution-image {
+        width: 100%;
+        height: 200px;
     }
 }

@@ -360,9 +360,13 @@
     color: blue;
 }
 
-@media screen and (max-width: 1640px){
+@media screen and (max-width: 1440px){
     .quick-sp{
         max-height: 50vh;
+    }
+    .process-arrangement{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -383,11 +387,6 @@
     }
 
     .service-arrangement{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .process-arrangement{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
