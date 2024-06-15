@@ -81,7 +81,7 @@ const solution = [
                         <h1>Research & Supports <GiBubblingFlask /></h1>
                             <p>Our aim is to provide you, the wealth advisor, with expert insights, keeping you updated on global market trends. With this knowledge, we can develop a tailored wealth plan aligned with your objectives, facilitating effective implementation of recommendations.</p>
                         </div>
-                    <div className="allocation-image" />
+                    <div className="research-image" />
                 </div>
             </>
         ),
