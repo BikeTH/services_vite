@@ -36,22 +36,36 @@ const features = [
 const solution = [
     {
         id: 1,
-        image: '/src/assets/image/UT-solution/planning.jpg',
-        symbol: <GrPlan />,
-        title: "Financial Planning Services",
-        context: "We focus on identifying effective strategies and financial solutions for wealth advisors and investors to reach their financial goals. Our services offer access to diverse global investments, currency exposure, and tax benefits without initial capital requirements.",
+        content: (
+            <>
+                <div className="UT-solution">
+                    <div className="solution-content">
+                        <h1>Financial Planning Services <GrPlan /></h1>
+                            <p>We focus on identifying effective strategies and financial solutions for wealth advisors and investors to reach their financial goals. Our services offer access to diverse global investments, currency exposure, and tax benefits without initial capital requirements.</p>
+                        </div>
+                    <div className="planning-image" />
+                </div>
+            </>
+        ),
         badge: (
             <>
                 <h1></h1>
             </>
-        )
+        ),
     },
     {
         id: 2,
-        image: "/src/assets/image/UT-solution/allocate.jpg",
-        symbol: <GrMultiple />,
-        title: "Asset Allocation",
-        context: "Ensures precise distribution of wealth and legacy during and after one's lifetime, all for a minimal fee, providing confidence in the transfer of investments to loved ones.",
+        content: (
+            <>
+                <div className="UT-solution">
+                    <div className="solution-content">
+                        <h1>Asset Allocation <GrMultiple /></h1>
+                            <p>Ensures precise distribution of wealth and legacy during and after one's lifetime, all for a minimal fee, providing confidence in the transfer of investments to loved ones.</p>
+                        </div>
+                    <div className="allocation-image" />
+                </div>
+            </>
+        ),
         badge: (
             <>
                 <h1></h1>
@@ -60,10 +74,17 @@ const solution = [
     },
     {
         id: 3,
-        image: "/src/assets/image/UT-solution/research.jpg",
-        symbol: <GiBubblingFlask />,
-        title: "Research & Supports",
-        context: "Our aim is to provide you, the wealth advisor, with expert insights, keeping you updated on global market trends. With this knowledge, we can develop a tailored wealth plan aligned with your objectives, facilitating effective implementation of recommendations.",
+        content: (
+            <>
+                <div className="UT-solution">
+                    <div className="solution-content">
+                        <h1>Research & Supports <GiBubblingFlask /></h1>
+                            <p>Our aim is to provide you, the wealth advisor, with expert insights, keeping you updated on global market trends. With this knowledge, we can develop a tailored wealth plan aligned with your objectives, facilitating effective implementation of recommendations.</p>
+                        </div>
+                    <div className="allocation-image" />
+                </div>
+            </>
+        ),
         badge: (
             <>
                 <h1></h1>
@@ -140,12 +161,8 @@ export default function UTstructure() {
                 <div className="UT-solution-arrangement">
                     <h1>Solutions</h1>
                     {solution.map(data => (
-                        <div className="UT-solution" key={data.id}>
-                            <div className="solution-content">
-                                <h1>{data.title} {data.symbol}</h1>
-                                <p>{data.context}</p>
-                            </div>
-                            <div className="solution-image" style={{backgroundImage: `url(${data.image})`}} />
+                        <div key={data.id}>
+                            {data.content}
                         </div>
                     ))}
                 </div>

@@ -129,17 +129,13 @@
     text-align: justify;
 }
 
-.UT-solution .solution-image {
-    width: 70%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-}
-
 .solution-content{
     padding:50px;
     padding-right: 0;
+}
+
+.solution-content p{
+    text-align: justify;
 }
 
 .variety-service{
@@ -161,6 +157,33 @@
 .map-service{
     width: 50%;
     transform: translateX(50%);
+}
+
+.planning-image{
+    background-image: url("../../../assets/image/UT-solution/planning.jpg");
+    width: 70%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+}
+
+.allocation-image{
+    background-image: url("../../../assets/image/UT-solution/allocate.jpg");
+    width: 70%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+}
+
+.research-image{
+    background-image: url("../../../assets/image/UT-solution/research.jpg");
+    width: 70%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -211,13 +234,16 @@
         transform: translateX(0);
     }
 
-    .UT-solution .solution-image {
+    .planning-image{
         width: 100%;
-        height: 300px;
-        background-size: cover;
-        background-position: center;
-        border-radius: 15px;
-        padding-right: 20px;
+    }
+    
+    .allocation-image{
+        width: 100%;
+    }
+    
+    .research-image{
+        width: 100%;
     }
     
     .solution-content{
@@ -268,8 +294,15 @@
         width: 100%;
     }
 
-    .UT-solution .solution-image {
-        width: 100%;
+    .planning-image{
+        height: 200px;
+    }
+    
+    .allocation-image{
+        height: 200px;
+    }
+    
+    .research-image{
         height: 200px;
     }
 }
