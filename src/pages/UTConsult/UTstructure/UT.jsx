@@ -41,7 +41,7 @@ const solution = [
                 <div className="UT-solution">
                     <div className="solution-content">
                         <h1>Financial Planning Services <GrPlan /></h1>
-                            <p>We focus on identifying effective strategies and financial solutions for wealth advisors and investors to reach their financial goals. Our services offer access to diverse global investments, currency exposure, and tax benefits without initial capital requirements.</p>
+                            <p>We focus on identifying effective strategies and financial solutions for wealth advisors and investors to reach their financial goals. Our services offer access to diverse global investments, Bonds, Money Market, Equity and More.</p>
                         </div>
                     <div className="planning-image" />
                 </div>
