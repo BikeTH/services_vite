@@ -4,7 +4,10 @@ import { MdDiversity2, MdManageAccounts, MdOutlineSavings } from "react-icons/md
 import { PiCoinVerticalBold } from "react-icons/pi";
 import { GrPlan, GrMultiple } from "react-icons/gr";
 import { GiBubblingFlask } from "react-icons/gi";
-import { ComposableMap, Geographies, Geography, ZoomableGroup, Marker } from "react-simple-maps";
+import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+import { FaRegNewspaper, FaMap, FaRegLightbulb } from "react-icons/fa";
+import { FaHandsHoldingCircle } from "react-icons/fa6";
+import { BsBoxes, BsPatchCheck } from "react-icons/bs";
 
 const features = [
     {
@@ -42,14 +45,19 @@ const solution = [
                     <div className="solution-content">
                         <h1>Financial Planning Services <GrPlan /></h1>
                             <p>We focus on identifying effective strategies and financial solutions for wealth advisors and investors to reach their financial goals. Our services offer access to diverse global investments, Bonds, Money Market, Equity and More.</p>
+                        <div className="badge-arrangement">
+                            <div className="badge">
+                                <BsPatchCheck />
+                                <span className="badge-text">Goals</span>
+                            </div>
+                            <div className="badge">
+                                <FaRegLightbulb />
+                                <span className="badge-text">Idea</span>
+                            </div>
                         </div>
+                    </div>
                     <div className="planning-image" />
                 </div>
-            </>
-        ),
-        badge: (
-            <>
-                <h1></h1>
             </>
         ),
     },
@@ -61,16 +69,21 @@ const solution = [
                     <div className="solution-content">
                         <h1>Asset Allocation <GrMultiple /></h1>
                             <p>Ensures precise distribution of wealth and legacy during and after one's lifetime, all for a minimal fee, providing confidence in the transfer of investments to loved ones.</p>
+                        <div className="badge-arrangement">
+                            <div className="badge">
+                                <BsBoxes />
+                                <span className="badge-text">Diversify</span>
+                            </div>
+                            <div className="badge">
+                                <FaMap />
+                                <span className="badge-text">Worldwide</span>
+                            </div>
                         </div>
+                    </div>
                     <div className="allocation-image" />
                 </div>
             </>
         ),
-        badge: (
-            <>
-                <h1></h1>
-            </>
-        )
     },
     {
         id: 3,
@@ -80,16 +93,21 @@ const solution = [
                     <div className="solution-content">
                         <h1>Research & Supports <GiBubblingFlask /></h1>
                             <p>Our aim is to provide you, the wealth advisor, with expert insights, keeping you updated on global market trends. With this knowledge, we can develop a tailored wealth plan aligned with your objectives, facilitating effective implementation of recommendations.</p>
+                        <div className="badge-arrangement">
+                            <div className="badge">
+                                <FaRegNewspaper />
+                                <span className="badge-text">News</span>
+                            </div>
+                            <div className="badge">
+                                <FaHandsHoldingCircle />
+                                <span className="badge-text">Suitable</span>
+                            </div>
                         </div>
+                    </div>
                     <div className="research-image" />
                 </div>
             </>
         ),
-        badge: (
-            <>
-                <h1></h1>
-            </>
-        )
     }
 ];
 
@@ -135,16 +153,22 @@ const markers = [
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
 
 export default function UTstructure() {
+    function scrollToServices(){
+        const servicesAll = document.getElementById('UTfeature');
+        servicesAll.scrollIntoView({ behavior: 'smooth', block: 'start'});
+    } 
+
     return (
         <>
             <div className="UT-structure">
                 <h1 style={{ marginTop: "0px" }}>Providing comprehensive value to investors across the board.</h1>
                 <p>Unlock the potential of your savings by discovering the benefits that unit trusts offer to investors!</p>
+                <div className="btn-arrangement"><button className="ButtonUT" onClick={() => scrollToServices()}>Get started</button></div>
             </div>
             <div className="UT-feature">
-                <div className="Intro-UT">
+                <div id="UTfeature" className="Intro-UT">
                     <h1>What are Unit Trusts?</h1>
-                    <p style={{ textAlign: "center" }}>Unit trusts are investment funds that allow investors to pool their money together to invest in a diversified portfolio of assets such as stocks, bonds, or other securities.</p>
+                    <p style={{ textAlign: "center" }}>Unit trusts are investment funds that allow investors to pool their money together to invest in a diversified portfolio of assets such as Stocks, Bonds, or Other Securities.</p>
                     <p style={{ textAlign: "center" }}>These funds are managed by professional fund managers who make investment decisions on behalf of the investors.</p>
                 </div>
                 <div className="UT-feature-arrangement">
