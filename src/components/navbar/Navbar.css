@@ -174,13 +174,20 @@ body.nav-open {
     }
 
     .servicesMenu{
+        background-color: rgba(40, 44, 48);
         cursor: pointer;
-        color: #808080;
+        color: white;
         padding-bottom: 8px;
     }
 
     .servicesMenu .arrow{
         transition: transform 0.3s;
+    }
+
+    .nav li.active {
+        color:#9fef00;
+        transform: scale(1.05);
+        border-bottom: none;
     }
 
     .nav ul {
@@ -192,9 +199,9 @@ body.nav-open {
     }
 
     .nav ul.open{
+        background-color: rgba(40, 44, 48);
         display:flex;
         flex-direction: column;
-        background-color: rgba(40, 44, 48);
         position: fixed;
         top: 0;
         left: 0;
@@ -209,7 +216,6 @@ body.nav-open {
         position: relative;
         top: 100%;
         left: 0;
-        background-color: rgba(40, 44, 48);
         color: white;
         cursor: pointer;
         display: flex;
