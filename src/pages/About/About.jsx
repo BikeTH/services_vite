@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./About.css";
 import CarouselExp from "../../components/carousel/CarouselExp";
 import CarouselOut from "../../components/carousel/CarouselOut";
@@ -58,9 +59,17 @@ export default function About() {
                         </div>
                     </div>
                 </div>
+                <div className="Contact-landing">
+                    <h1>Reach me Out!</h1>
+                    <p>I'd love to hear from you! Whether you have a <span>Question</span>, a <span>Project Idea</span>, 
+                        or just want to <span>say Hello</span>, feel free to get in touch. 
+                        I'm always excited to connect with new people and explore new opportunities.</p>
+                        <Link to="/contact" className="contact-button">
+                            Contact Me!
+                        </Link>
+                </div>
                 <Footer />
             </div>
-
         </>
     )
 }

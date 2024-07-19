@@ -310,21 +310,7 @@
     padding: 50px;
     color: black;
     background-color: white;
-    z-index: -1;
-}
-
-.Contact-landing::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-image: url("../../assets/image/consult.jpg");
-    background-size: cover;
-    background-position: 50% 25%;
-    opacity: 0.8;
-    z-index: -1;
 }
 
 .contact-button {
@@ -479,10 +465,6 @@
         padding: 10px;
     }
     
-    .Contact-landing::before {
-        opacity: 0.3;
-    }
-    
     .Contact-landing h1 {
         color:#9fef00;
         margin: 0;
@@ -490,7 +472,7 @@
     
     .Contact-landing p {
         font-weight: bolder;
-        width: 50%;
+        width: 100%;
         padding-top: 15px;
         padding-bottom: 15px;
     }
