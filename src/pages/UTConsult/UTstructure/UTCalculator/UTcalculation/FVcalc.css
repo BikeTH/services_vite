@@ -120,8 +120,13 @@ div .arrangement{
 
 .comp-remove{
     display: flex;
-    gap:5px;
+    justify-content: space-between;
+    gap: 10px;
     padding-bottom: 5px;
+}
+
+.comp-remove p{
+    margin: 0;
 }
 
 .cancel-icon{

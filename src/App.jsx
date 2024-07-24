@@ -21,6 +21,12 @@ export default function App(){
                     <Route path="/UTConsult" element={<UTConsult />} />
                     <Route path="/CSAid" element={<CSAid />} />
                     <Route path="/ITconsult" element={<ITconsult />} />
+                    {/* 404 Route */}
+                    <Route path="*" element={
+                    <div style={{textAlign:'center', paddingTop:'50'}}>
+                        <h1>404 - Not Found</h1>
+                        <p>The page you are looking for does not exist.</p>
+                    </div>}/>
                 </Routes>
             </div>
             <NavToTop />
