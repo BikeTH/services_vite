@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./FVcalc.css";
-import { MdCancel, MdDownload } from "react-icons/md";
-import { PDFDownloadLink, Link, Page, Text, View, Document, StyleSheet} from '@react-pdf/renderer';
+import { MdCancel} from "react-icons/md";
+import { PDFDownloadLink, Link, Page, Text, View, Document, Image, StyleSheet} from '@react-pdf/renderer';
+import allocateImage from './allocate.jpg';
 
 export default function FVcalculation() {
     const [product, setProduct] = useState("");
@@ -241,8 +242,9 @@ export default function FVcalculation() {
                                             <Text style={styles.header} fixed>
                                                 ~ Generated from wilfredcty.com ~
                                             </Text>
-                                            <Text style={styles.title}>Best funds among the comparison!</Text>
+                                            <Text style={styles.title}>Funds Comparison Report!</Text>
                                             <Link href='https://wilfredcty.com' style={styles.author}>wilfredcty.com</Link>
+                                            <Image style={styles.image} src={allocateImage} />
                                             <Text style={styles.text}>
                                             Amongs the Funds/Products you had inputed, there's one that stands out, {highestEarning.productName} with an Impressive Performance of ${highestEarning.earn} over 
                                             the past {highestEarning.lengthOfTime}-years boasting a solid return of {highestEarning.annualReturnRate}%. Translates to a 
@@ -280,10 +282,15 @@ export default function FVcalculation() {
 
 const styles = StyleSheet.create({
     header:{
-        fontSize: 12,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        fontSize: 10,
         marginBottom: 20,
         textAlign: 'center',
-        color: 'grey'
+        backgroundColor: 'black',
+        color: 'white'
     },
     body: {
         paddingTop: 35,
@@ -291,7 +298,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 35,
     },
     title: {
-        fontSize: 24,
+        fontSize: 18,
         textAlign: 'center',
     },
     author: {
@@ -301,12 +308,8 @@ const styles = StyleSheet.create({
         color: 'grey',
         textDecoration: 'none',
     },
-    linkHover: {
-        color: 'blue',
-        textDecoration: 'underline',
-    },
     text: {
-        margin: 12,
+        margin: 10,
         fontSize: 14,
         textAlign: 'justify',
     },
@@ -316,7 +319,7 @@ const styles = StyleSheet.create({
     },
     pageNumber: {
         position: 'absolute',
-        fontSize: 12,
+        fontSize: 10,
         bottom: 50,
         left: 0,
         right: 0,
@@ -330,7 +333,7 @@ const styles = StyleSheet.create({
         right: 0,
         textAlign: 'center',
         color: 'white',
-        fontSize: 12,
+        fontSize: 10,
         backgroundColor: 'black',
         padding: 10,
     },
