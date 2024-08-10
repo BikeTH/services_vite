@@ -1,11 +1,94 @@
-import React from "react";
+import React, {useState} from "react";
 import './ITconsult.css';
 import bannerImage from '../../assets/image/ITConsult/banner.jpeg';
+import me from '../../assets/image/ITConsult/teamMember/aiMe.png';
 import { VscVerified, VscHeart, VscGear, VscDashboard } from "react-icons/vsc";
 import { CgWebsite, CgSmartphone } from "react-icons/cg";
 import { FaFigma, FaReact, FaNode, FaHtml5, FaCss3Alt, FaJava, FaDigitalOcean, FaLinux, FaDocker } from "react-icons/fa";
 import { SiExpo, SiMysql } from "react-icons/si";
-import { FaCoins, FaBolt, FaPenNib, FaMapLocationDot, FaUsersGear, FaServer } from "react-icons/fa6";
+import { FaCoins, FaBolt, FaPenNib, FaMapLocationDot, FaUsersGear, FaServer, FaLinkedin, FaArrowUpRightDots } from "react-icons/fa6";
+import { AiOutlinePlus } from "react-icons/ai";
+import { TbMail } from "react-icons/tb";
+
+const teams = [
+    {
+        id: 1,
+        picture: me,
+        details:(
+            <>
+                <div className="team-member-info-arrangement">
+                    <h3>Wilfred</h3>
+                    <p>B.sc. Major in Cyber Security</p>
+                    <p>INTP - Curious and adventurous, always eager to explore new horizons!</p>
+                    <p>IT</p>
+                    <a href="http://wilfredcty.com"  target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none', color: 'inherit' }}>Portfolio <FaArrowUpRightDots /></a>
+                    <div className="team-member-connect-arrangement">
+                        <a href="https://www.linkedin.com/in/wilfred-tsen-yik-chong-2a37a724b" target="_blank" rel="noreferrer noopener"><FaLinkedin color="#0077B5" /></a>
+                        <a href="mailto:700024165@student.curtin.edu.my" target="_blank" rel="noreferrer noopener"><TbMail color="636363" /></a>
+                    </div>
+                </div>
+            </>
+        )
+    },
+    {
+        id: 2,
+        picture: "",
+        details:(
+            <>
+            
+            </>
+        )
+    }
+]
+
+const faqs = [
+    {
+        id: 1,
+        questions: "What we do ?",
+        answer: (
+            <>
+                <p>We provide you with a professional Web / App development service for your industry</p>
+            </>
+        )
+    },
+    {
+        id: 2,
+        questions: "What do we need before we start develop ?",
+        answer: (
+            <>
+                <p>We will provide you a CHECKLIST for information and content before the project starts.</p>
+                <p>We will be proactive during this phase, and your cooperation is important</p>
+            </>
+        )
+    },
+    {
+        id: 3,
+        questions: "How long does it take for us to develop ?",
+        answer: (
+            <>
+                <p>It takes approximately at least 2 weeks from starts to finish, depending on project complexity</p>
+            </>
+        )
+    },
+    {
+        id: 4,
+        questions: "Technical Issue? We're on It !",
+        answer: (
+            <>
+                <p>If your application or website facing any issues, we will take action in fixing it right away!</p>
+            </>
+        )
+    },
+    {
+        id: 5,
+        questions: "How we develop our Project ?",
+        answer: (
+            <>
+                <p>Most of our Project will be done in Programming, source code will be given to you</p>
+            </>
+        )
+    }
+]
 
 const chooseUs = [
     {
@@ -101,6 +184,12 @@ const offer = [
 ]
 
 export default function ITconsult(){
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const handleToggle = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
     function scrollToServices(){
         const servicesAll = document.getElementById('ITConsult');
         servicesAll.scrollIntoView({ behavior: 'smooth', block: 'start'});
@@ -111,26 +200,26 @@ export default function ITconsult(){
         <div className="ITconsult-main">
             <div className="ITconsult-banner">
                 <div className="ITconsult-intro-content">
-                    <h1>Website/Application Development Malaysia</h1>
+                    <h1>Website / Application Development Malaysia</h1>
                     <h2>We Build Stunning, Efficient Websites & Apps that captivate users.</h2>
                     <p>A stunning looking website is the First Step</p>
                     <button className="buttonIT" onClick={() => scrollToServices()}>Get started</button>
                 </div>
-                <img style={{maxHeight:"540px", maxWidth:"540px"}} src={bannerImage} />
+                <img src={bannerImage} />
             </div>
             <div id="ITConsult" className="ITconsult-content">
                 <div className="ITconsult-reason-content">
                     <div className="ITconsult-reason-header">
-                        <h1>4 Main Reasons</h1>
-                        <h2>Professional website Boost Sales</h2>
+                        <h1 style={{fontSize: "24px", fontWeight:"600"}}>4 Main Reasons</h1>
+                        <h2 style={{fontSize: "42px", fontWeight:"300"}}>Professional website Boost Sales</h2>
                     </div>
                     <div className="ITconsult-reason-support">
                         {
                             reasonSupport.map(data => (
                                 <div className="ITconsult-reason-support-arrangement" key={data.id}>
-                                    <h1>{data.icon}</h1>
-                                    <h2>{data.title}</h2>
-                                    <p>{data.description}</p>
+                                    <h1 style={{fontSize: "48px"}}>{data.icon}</h1>
+                                    <h2 style={{fontSize: "28px", fontWeight:"800"}}>{data.title}</h2>
+                                    <p style={{fontSize: "18px", fontWeight:"400"}}>{data.description}</p>
                                 </div>
                             ))
                         }
@@ -138,46 +227,80 @@ export default function ITconsult(){
                 </div>
             </div>
             <div className="ITconsult-offer">
+                <h1 style={{fontSize: "24px"}}>What we Offer</h1>
+                    <div className="ITconsult-offer-arrangment">
                     {
                         offer.map(data => (
-                            <div className="ITconsult-offer-arrangement" key={data.id}>
-                                <h1>{data.icon}</h1>
-                                <h2>{data.title}</h2>
+                            <div className="ITconsult-offer-content" key={data.id}>
+                                <h1 style={{fontSize: "68px", fontWeight:"800"}}>{data.icon}</h1>
+                                <h2 style={{fontSize: "24px", fontWeight:"400", margin:"0", transform:"translateY(-48px)"}}>{data.title}</h2>
                             </div>
                         ))
                     }
+                    </div>
             </div>
             <div className="ITconsult-tech-slider">
                 {tech.map((icon, index) => (
-                    <div className="ITconsult-tech-item" style={{ animationDelay: `${-30 / tech.length * index}s` }} key={index}>
+                    <div className="ITconsult-tech-item" style={{ animationDelay: `${-10 / tech.length * index}s` }} key={index}>
                         {icon}
                     </div>
                 ))}
             </div>
             <div className="ITconsult-why-us">
-                {
-                    chooseUs.map(data => (
-                        <div className="ITconsult-why-us-arrangement" key={data.id}>
-                            <h1>{data.icon}</h1>
-                            <h2>{data.title}</h2>
-                            <p>{data.description}</p>
-                        </div>
-                    ))
-                }
+                <h1 style={{fontSize: "24px"}}>Why Choose Us?</h1>
+                <div className="ITconsult-why-us-arrangement">
+                    {
+                        chooseUs.map(data => (
+                            <div className="ITconsult-why-us-content" key={data.id}>
+                                <h1>{data.icon}</h1>
+                                <h2>{data.title}</h2>
+                                <p>{data.description}</p>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
             <div className="ITconsult-price-quotation">
-                <h1>How Much to Build Website</h1>
-                <h2>Calculate estimate cost by using below Form</h2>
-                <p>Price may changed without noticed</p>
+                    <div className="ITconsult-price-quotation-header">
+                        <h1 style={{fontSize: "24px", textAlign:"center"}}>Build Website / Application Plan</h1>
+                        <h2 style={{fontSize: "42px", textAlign:"center", margin:"0px"}}>How Much to Build a Website / Application?</h2>
+                        <p style={{fontSize: "16px", textAlign:"center", margin:"0px", fontStyle:"italic"}}>Price may vary without notice</p>
+                </div>
                 <div className="ITconsult-price-quotation-form">
 
                 </div>
             </div>
             <div className="ITconsult-faq">
-
+                <div className="ITconsult-faq-header" style={{textAlign:"center"}}>
+                    <h1 style={{fontSize:"24px", margin:"0px"}}>FAQ</h1>
+                    <h2 style={{fontSize:"38px", margin:"0px"}}>Ask Away! Your questions Matter to Us</h2>
+                </div>
+                <div className="ITconsult-faq-question">
+                    {faqs.map((faq,index) => (
+                        <div className="ITconsult-faq-question-arrangement" key={faq.id} onClick={() => handleToggle(index)}>
+                            <h1 onClick={() => handleToggle(index)}>{faq.questions} 
+                            <AiOutlinePlus className={`icon ${activeIndex === index ? 'rotate' : ''}`} /></h1>
+                            <div className={`ITconsult-faq-answer ${activeIndex === index ? 'expanded' : ''}`}>
+                                {faq.answer}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className="ITconsult-teams">
-
+                <h1 style={{fontSize:"24px", textAlign:"center"}}>Meet Our Team</h1>
+                <div className="ITconsult-teams-arrangement">
+                    {teams.map(data => (
+                        <div className="ITconsult-teams-member-arrangement" key={data.id}>
+                            <div className="member-detail-arrangement">
+                                <img className="member-picture" src={data.picture} />
+                                <div>
+                                    {data.details}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className="ITconsult-contact">
 
