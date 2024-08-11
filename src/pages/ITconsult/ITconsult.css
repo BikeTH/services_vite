@@ -26,6 +26,10 @@
     font-size: 16px;
 }
 
+.ITconsult-main span{
+    font-family: 'DO Futuristic', sans-serif;
+}
+
 .ITconsult-banner{
     display: flex;
     flex-direction: row;
@@ -57,7 +61,7 @@
 
 .ITconsult-banner img{
     padding: 12px;
-    max-height: 50%;
+    max-height: 75%;
     min-width: 50%;
     border-radius: 5%;
     border-top-left-radius: 25%;
@@ -176,7 +180,7 @@
 
 .ITconsult-price-quotation{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     gap: 32px;
     margin: 18px;
@@ -186,6 +190,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    gap: 32px;
 }
 
 .ITconsult-faq-header{
@@ -304,6 +309,12 @@
     right: 0;
 }
 
+.contact-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .ITconsult-contact{
     display: flex;
     flex-direction: row;
@@ -320,46 +331,177 @@
     width: auto;
 }
 
-.ITconsult-contact-detail ul{
+.ITconsult-contact-detail{
+    padding: 12px;
+    border-right: 1px solid white;
+}
+
+.ITconsult-contact-detail ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     list-style-type: none;
+    padding: 0; /* Ensure no padding around the list */
+    margin: 0;  /* Ensure no margin around the list */
 }
 
-.ITconsult-contact-detail ul a{
+.ITconsult-contact-detail ul a {
+    position: relative; /* Required for positioning .contact-text */
     padding: 8px;
     font-size: 32px;
     text-decoration: none;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
 }
 
-.ITconsult-contact-detail ul a:hover{
-    transform: scale(1.15);
+.ITconsult-contact-detail ul a:hover {
+    transform: scale(1.20);
 }
 
 .contact-text {
+    color: white;
+    font-size: 12px;
     display: none;
     position: absolute;
     top: 100%;
+    left: 50%;
+    transform: translateX(-40%);
     text-align: center;
     opacity: 0;
-    transition: transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .ITconsult-contact-detail ul a:hover .contact-text {
     display: block;
     opacity: 1;
-    animation: fadeInContact 0.5s ease-in-out
+    animation: fadeInContact 0.5s ease-in-out;
 }
 
-@keyframes fadeInContact{
+@keyframes fadeInContact {
     from {
         opacity: 0;
-      }
-      to {
+    }
+    to {
         opacity: 1;
-      }
+    }
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form h1, .contact-details-back h1{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    display: flex; /* Use flexbox to center the icon */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Adjust font size of the icon if necessary */
+}
+
+.contact-form h1:hover, .contact-details-back h1:hover{
+    cursor: pointer;
+    transform: scale(1.15em);
+    color: black;
+    background-color: white;
+    animation: fadeInContact 0.5s ease-in-out;
+}
+
+.contact-form-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.contact-fill-form-arrangement{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 24px;
+    border-left: 1px solid white;
+    padding: 12px;
+}
+
+.contact-form-arrangement{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+}
+
+.contact-fill-form{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sent-query {
+    position: relative; /* Positioning context for child elements */
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer */
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    font-size: 24px; /* Adjust icon size */
+    color: #fff; /* Adjust icon color */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.sent-query:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    color: #ccc; /* Change color on hover */
+}
+
+.sent-query .form-submit-button {
+    position: absolute;
+    bottom: -30px; /* Adjust to position text below icon */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px; /* Adjust text size */
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Hide text by default */
+    transition: opacity 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.sent-query:hover .form-submit-button {
+    opacity: 1; /* Show text on hover */
+    transform: translateX(-50%) translateY(-10px); /* Position text above */
+}
+
+.our-location{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.our-location-arrangement{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+
+.ITconsult-footer-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 24px;
 }

@@ -3,13 +3,42 @@ import './ITconsult.css';
 import bannerImage from '../../assets/image/ITConsult/banner.jpeg';
 import me from '../../assets/image/ITConsult/teamMember/aiMe.png';
 import quotation from '../../assets/image/ITConsult/quotation.jpeg';
+import email from '../../assets/image/ITConsult/email.jpeg';
 import { VscVerified, VscHeart, VscGear, VscDashboard } from "react-icons/vsc";
 import { CgWebsite, CgSmartphone } from "react-icons/cg";
 import { FaFigma, FaReact, FaNode, FaHtml5, FaCss3Alt, FaJava, FaDigitalOcean, FaLinux, FaDocker } from "react-icons/fa";
 import { SiExpo, SiMysql } from "react-icons/si";
-import { FaCoins, FaBolt, FaPenNib, FaMapLocationDot, FaUsersGear, FaServer, FaLinkedin, FaArrowUpRightDots, FaWhatsapp, FaInstagram } from "react-icons/fa6";
+import { FaCoins, FaBolt, FaPenNib, FaMapLocationDot, FaUsersGear, FaServer, FaLinkedin, FaArrowUpRightDots, FaArrowRight, FaArrowLeft, FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbMail } from "react-icons/tb";
+import { SiMinutemailer } from "react-icons/si";
+import { BiMapPin } from "react-icons/bi";
+
+const footer = [
+    {
+        id: 1,
+        title: "About",
+        content:"We build functional websites and applications tailored to your business needs, whether for optimizing operations or increasing visitor engagement. Our solutions enhance efficiency and deliver practical, user-friendly tools.",
+    },
+    {
+        id: 2,
+        title: "Quick Link",
+        content: 
+        <>
+                <p>Home</p>
+                <p>Offer</p>
+                <p>Pricing</p>
+                <p>FaQ</p>
+                <p>Team</p>
+                <p>Contact</p>
+        </>
+    },
+    {
+        id: 3,
+        title: "Legal",
+        content: "Privacy  Policy",
+    },
+]
 
 const teams = [
     {
@@ -186,6 +215,7 @@ const offer = [
 
 export default function ITconsult(){
     const [activeIndex, setActiveIndex] = useState(null);
+    const [showForm, setShowForm] = useState(false);
 
     const handleToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -194,7 +224,15 @@ export default function ITconsult(){
     function scrollToServices(){
         const servicesAll = document.getElementById('ITConsult');
         servicesAll.scrollIntoView({ behavior: 'smooth', block: 'start'});
-    } 
+    }
+
+    const handleContactClick = () => {
+        setShowForm(true);
+    };
+
+    const handleBackClick = () => {
+        setShowForm(false);
+    };
 
     return(
         <>
@@ -262,13 +300,13 @@ export default function ITconsult(){
                 </div>
             </div>
             <div className="ITconsult-price-quotation">
-                    <div className="ITconsult-price-quotation-header">
-                        <h1 style={{fontSize: "24px", textAlign:"center"}}>Build Website / Application Plan</h1>
-                        <h2 style={{fontSize: "42px", textAlign:"center", margin:"0px"}}>How Much to Build a Website / Application?</h2>
-                        <p style={{fontSize: "16px", textAlign:"center", margin:"0px", fontStyle:"italic"}}>Price may vary without notice</p>
+                <div className="ITconsult-price-quotation-header">
+                    <h1 style={{fontSize: "24px", textAlign:"center"}}>Build Website / Application Plan</h1>
+                    <h2 style={{fontSize: "42px", textAlign:"center", margin:"0px"}}>How Much to Build a Website / Application?</h2>
+                    <p style={{fontSize: "16px", textAlign:"center", margin:"0px", fontStyle:"italic"}}>Price may vary without notice</p>
                 </div>
                 <div className="ITconsult-price-quotation-form">
-
+                    <h1 style={{textAlign:"center", fontSize:"68px"}}>Progressing....</h1>
                 </div>
             </div>
             <div className="ITconsult-faq">
@@ -303,21 +341,92 @@ export default function ITconsult(){
                     ))}
                 </div>
             </div>
-            <div className="ITconsult-contact">
-                <img src={quotation} />
-                <div className="ITconsult-contact-detail">
-                    <h1>Request For Quotation ?</h1>
-                    <p>You can directly Contact Us with no Charges and We are Happy to Help!</p>
-                    <ul>
-                        <a href="https://www.linkedin.com/in/wilfred-tsen-yik-chong-2a37a724b" target="_blank" rel="noreferrer noopener"><FaLinkedin color="#0077B5" /><span className="contact-text">LinkedIn</span></a>
-                        <a href="https://www.instagram.com/wilc_43?igsh=MWtteTUyOXVxbjlvdg==" target="_blank" rel="noreferrer noopener"><FaInstagram color="#bc2a8d" /><span className="contact-text">Instagram</span></a>
-                        <a href="tel:+601121823390" target="_blank" rel="noreferrer noopener"><FaWhatsapp color="#25D366" /><span className="contact-text">Whatapps</span></a>
-                        <a href="mailto:700024165@student.curtin.edu.my" target="_blank" rel="noreferrer noopener"><TbMail color="636363" /><span className="contact-text">Email</span></a>
-                    </ul>
+            <div className={`ITconsult-contact ${showForm ? 'slide-out' : ''}`}>
+                    {showForm ? (
+                        <div className="contact-form-section">
+                            <div className="contact-form-arrangement">
+                                <div className="contact-details-back">
+                                    <h1 onClick={handleBackClick}><FaArrowLeft /></h1>
+                                    <p style={{textAlign:"center", fontSize:"12px"}}>Back</p>
+                                </div>
+                                <div className="contact-fill-form-arrangement">
+                                    <div className="contact-form-header">
+                                        <h1>Contact Us</h1>
+                                        <p>Reach Out to Us by filling the Form</p>
+                                    </div>
+                                    <form className="contact-fill-form">
+                                        <input type="text" id="name" name="name" placeholder="Name" required />
+                                        <input type="email" id="email" name="email" placeholder="Email" required />
+                                        <input type="subject" id="subject" name="subject" placeholder="Subject" required />
+                                        <textarea id="message" name="message" placeholder="Write Us your Query"required></textarea>
+                                        <button type="submit" className="sent-query"><SiMinutemailer /><span className="form-submit-button">Submit</span></button>
+                                    </form>
+                                </div>
+                                <img src={email}/>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="contact-details">
+                            <img src={quotation} alt="Quotation" />
+                            <div className="ITconsult-contact-detail">
+                                <h1>Request For Quotation?</h1>
+                                <p>You can directly Contact Us with no Charges and We are Happy to Help!</p>
+                                <ul>
+                                    <a href="https://www.linkedin.com/in/wilfred-tsen-yik-chong-2a37a724b" target="_blank" rel="noreferrer noopener">
+                                        <FaLinkedin color="#0077B5" />
+                                        <span className="contact-text">LinkedIn</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/wilc_43?igsh=MWtteTUyOXVxbjlvdg==" target="_blank" rel="noreferrer noopener">
+                                        <FaInstagram color="#bc2a8d" />
+                                        <span className="contact-text">Instagram</span>
+                                    </a>
+                                    <a href="tel:+601121823390" target="_blank" rel="noreferrer noopener">
+                                        <FaWhatsapp color="#25D366" />
+                                        <span className="contact-text">WhatsApp</span>
+                                    </a>
+                                    <a href="mailto:700024165@student.curtin.edu.my" target="_blank" rel="noreferrer noopener">
+                                        <TbMail color="636363" />
+                                        <span className="contact-text">Email</span>
+                                    </a>
+                                </ul>
+                                <h3 style={{ textAlign: "center", padding:"12px" }}>Scan QR to find Us</h3>
+                                <div className="contact-qr-arrangement">
+                                    {/* QR code content */}
+                                </div>
+                            </div>
+                            <div className="contact-form">
+                                <h1 onClick={handleContactClick}><FaArrowRight /></h1>
+                                <p style={{ fontSize: "12px", textAlign:"center" }}>Write us a query</p>
+                            </div>
+                        </div>
+                    )}
                 </div>
-            </div>
             <div className="ITconsult-footer">
-                
+                <div className="our-location">
+                    <div className="our-location-arrangement">
+                        <h1><BiMapPin /></h1>
+                        <div>
+                            <h3>We are located at:</h3>
+                            <p>Malaysia</p>
+                        </div>
+                    </div>
+                    <div>
+                        LOGO
+                    </div>
+                </div>
+                <div style={{borderBottom:"0.2px solid white", padding:"8px", margin:"0 auto"}}/>
+                <div>
+                    <div className="ITconsult-footer-content">
+                        {footer.map(data => (
+                            <div className="ITconsult-footer-content-arrangement" key={data.id}>
+                                <h1>{data.title}</h1>
+                                <div>{data.content}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div style={{borderBottom:"0.2px solid white", padding:"8px", margin:"0 auto"}}/>
+                <p>&copy; 2024. All rights reserved.</p>
             </div>
         </div>
         </>
