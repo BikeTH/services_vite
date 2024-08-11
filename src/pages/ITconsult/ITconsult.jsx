@@ -2,11 +2,12 @@ import React, {useState} from "react";
 import './ITconsult.css';
 import bannerImage from '../../assets/image/ITConsult/banner.jpeg';
 import me from '../../assets/image/ITConsult/teamMember/aiMe.png';
+import quotation from '../../assets/image/ITConsult/quotation.jpeg';
 import { VscVerified, VscHeart, VscGear, VscDashboard } from "react-icons/vsc";
 import { CgWebsite, CgSmartphone } from "react-icons/cg";
 import { FaFigma, FaReact, FaNode, FaHtml5, FaCss3Alt, FaJava, FaDigitalOcean, FaLinux, FaDocker } from "react-icons/fa";
 import { SiExpo, SiMysql } from "react-icons/si";
-import { FaCoins, FaBolt, FaPenNib, FaMapLocationDot, FaUsersGear, FaServer, FaLinkedin, FaArrowUpRightDots } from "react-icons/fa6";
+import { FaCoins, FaBolt, FaPenNib, FaMapLocationDot, FaUsersGear, FaServer, FaLinkedin, FaArrowUpRightDots, FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbMail } from "react-icons/tb";
 
@@ -21,7 +22,7 @@ const teams = [
                     <p>B.sc. Major in Cyber Security</p>
                     <p>INTP - Curious and adventurous, always eager to explore new horizons!</p>
                     <p>IT</p>
-                    <a href="http://wilfredcty.com"  target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none', color: 'inherit' }}>Portfolio <FaArrowUpRightDots /></a>
+                    <a className="member-portfolio" href="http://wilfredcty.com"  target="_blank" rel="noreferrer noopener">Portfolio <FaArrowUpRightDots /></a>
                     <div className="team-member-connect-arrangement">
                         <a href="https://www.linkedin.com/in/wilfred-tsen-yik-chong-2a37a724b" target="_blank" rel="noreferrer noopener"><FaLinkedin color="#0077B5" /></a>
                         <a href="mailto:700024165@student.curtin.edu.my" target="_blank" rel="noreferrer noopener"><TbMail color="636363" /></a>
@@ -303,7 +304,17 @@ export default function ITconsult(){
                 </div>
             </div>
             <div className="ITconsult-contact">
-
+                <img src={quotation} />
+                <div className="ITconsult-contact-detail">
+                    <h1>Request For Quotation ?</h1>
+                    <p>You can directly Contact Us with no Charges and We are Happy to Help!</p>
+                    <ul>
+                        <a href="https://www.linkedin.com/in/wilfred-tsen-yik-chong-2a37a724b" target="_blank" rel="noreferrer noopener"><FaLinkedin color="#0077B5" /><span className="contact-text">LinkedIn</span></a>
+                        <a href="https://www.instagram.com/wilc_43?igsh=MWtteTUyOXVxbjlvdg==" target="_blank" rel="noreferrer noopener"><FaInstagram color="#bc2a8d" /><span className="contact-text">Instagram</span></a>
+                        <a href="tel:+601121823390" target="_blank" rel="noreferrer noopener"><FaWhatsapp color="#25D366" /><span className="contact-text">Whatapps</span></a>
+                        <a href="mailto:700024165@student.curtin.edu.my" target="_blank" rel="noreferrer noopener"><TbMail color="636363" /><span className="contact-text">Email</span></a>
+                    </ul>
+                </div>
             </div>
             <div className="ITconsult-footer">
                 
