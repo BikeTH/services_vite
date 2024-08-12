@@ -59,7 +59,7 @@ export default function Faq(){
     };
     return(
         <>
-        <div className="ITconsult-faq">
+        <div className="ITconsult-faq" id="faq">
             <div className="ITconsult-faq-header" style={{textAlign:"center"}}>
                 <h1 style={{fontSize:"24px", margin:"0px"}}>FAQ</h1>
                 <h2 style={{fontSize:"38px", margin:"0px"}}>Ask Away! Your questions Matter to Us</h2>

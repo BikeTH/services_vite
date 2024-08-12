@@ -19,3 +19,22 @@
     justify-content: center;
     gap: 24px;
 }
+
+.Footer-Quick-Link-btn{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.Footer-Quick-Link-btn button{
+    all: unset;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit; 
+}
+
+.Footer-Quick-Link-btn button:hover{
+    color: whitesmoke;
+    font-weight: 600;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import me from '../../../assets/image/ITConsult/teamMember/aiMe.png';
+import me from '../../../../assets/image/ITConsult/teamMember/aiMe.png';
 import './team.css';
 import { TbMail } from "react-icons/tb";
 import { FaArrowUpRightDots, FaLinkedin } from "react-icons/fa6";
@@ -10,7 +10,7 @@ const teams = [
         picture: me,
         details:(
             <>
-                <div className="team-member-info-arrangement">
+                <div className="team-member-info-arrangement" id="team">
                     <h3>Wilfred</h3>
                     <p>B.sc. Major in Cyber Security</p>
                     <p>INTP - Curious and adventurous, always eager to explore new horizons!</p>

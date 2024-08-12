@@ -1,5 +1,6 @@
 import React from "react";
 import './footer.css';
+import ScrollToSection from "../../function/scrollToSection";
 import { BiMapPin } from "react-icons/bi";
 
 const footer = [
@@ -13,25 +14,27 @@ const footer = [
         title: "Quick Link",
         content: 
         <>
-                <p>Home</p>
-                <p>Offer</p>
-                <p>Pricing</p>
-                <p>FaQ</p>
-                <p>Team</p>
-                <p>Contact</p>
+            <div className="Footer-Quick-Link-btn">
+                <button onClick={() => ScrollToSection('home')}>Home</button>
+                <button onClick={() => ScrollToSection('offer')}>Our Products</button>
+                <button onClick={() => ScrollToSection('quotation')}>Pricing Plan</button>
+                <button onClick={() => ScrollToSection('faq')}>FaQ</button>
+                <button onClick={() => ScrollToSection('team')}>Our Team</button>
+                <button onClick={() => ScrollToSection('contact')}>Contact Us</button>
+            </div>
         </>
     },
     {
         id: 3,
         title: "Legal",
-        content: "Privacy  Policy",
+        content: "Privacy Policy",
     },
 ]
 
 export default function Footer(){
     return(
         <>
-            <div className="ITconsult-footer">
+            <div className="ITconsult-footer" id="footer">
                 <div className="our-location">
                     <div className="our-location-arrangement">
                         <h1><BiMapPin /></h1>
