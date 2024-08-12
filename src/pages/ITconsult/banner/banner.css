@@ -1,0 +1,57 @@
+.ITconsult-banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ITconsult-intro-content h1{
+    line-height: 1.15em;
+}
+
+.ITconsult-intro-content h2{
+    font-size: 42px;
+    line-height: 1.15em;
+    max-width: 85%;
+}
+
+.ITconsult-intro-content p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.ITconsult-banner img{
+    padding: 12px;
+    max-height: 75%;
+    min-width: 50%;
+    border-radius: 5%;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    object-fit: cover;
+    height: auto;
+}
+
+.buttonIT{
+    font-family: 'DO Futuristic', sans-serif;  
+    font-size: 16px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    border-radius: 36px;
+    border: 0.5px groove white;
+    padding: 15px;
+    margin: 0px;
+    margin-top: 18px;
+}
+
+.buttonIT:hover{
+    background-color: #131313;
+    color: white;
+}
