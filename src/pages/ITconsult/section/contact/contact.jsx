@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './contact.css';
 import quotation from '../../../../assets/image/ITConsult/quotation.jpeg';
 import email from '../../../../assets/image/ITConsult/email.jpeg';
@@ -19,7 +19,7 @@ export default function Contact(){
 
     return(
         <>
-        <div className={`ITconsult-contact ${showForm ? 'slide-out' : ''}`} id="contact">
+        <div className={`ITconsult-contact ${showForm ? 'slide-out' : 'slide-in'}`} id="contact">
                 {showForm ? (
                     <div className="contact-form-section">
                         <div className="contact-form-arrangement">
@@ -40,12 +40,12 @@ export default function Contact(){
                                     <button type="submit" className="sent-query"><SiMinutemailer /><span className="form-submit-button">Submit</span></button>
                                 </form>
                             </div>
-                            <img src={email}/>
+                            <img src={email} alt="email image"/>
                         </div>
                     </div>
                 ) : (
                     <div className="contact-details">
-                        <img src={quotation} alt="Quotation" />
+                        <img src={quotation} alt="quotation image"/>
                         <div className="ITconsult-contact-detail">
                         <h1>Request For Quotation?</h1>
                             <p>You can directly Contact Us with no Charges and We are Happy to Help!</p>
