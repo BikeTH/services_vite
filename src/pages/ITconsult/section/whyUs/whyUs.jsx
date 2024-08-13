@@ -45,13 +45,13 @@ export default function WhyUs(){
     return(
         <>
         <div className="ITconsult-why-us">
-            <h1 style={{fontSize: "24px"}}>Why Choose Us?</h1>
+            <h1>Why Choose Us?</h1>
             <div className="ITconsult-why-us-arrangement">
             {
                 chooseUs.map(data => (
                     <div className="ITconsult-why-us-content" key={data.id}>
-                        <h1>{data.icon}</h1>
-                        <h2>{data.title}</h2>
+                        <h2>{data.icon}</h2>
+                        <h1>{data.title}</h1>
                         <p>{data.description}</p>
                     </div>
                 ))}

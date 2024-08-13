@@ -16,17 +16,22 @@
 }
 
 .ITconsult-main h1{
-    font-size: 24px;
-    font-weight: 800;
+    font-size: clamp(12px, 2vw + 1rem, 28px);
+    font-weight: 600;
 }
 
 .ITconsult-main h2{
-    font-size: 38px;
+    font-size: clamp(16px, 1.8vw + 1rem, 44px);
     font-weight: 800;
 }
 
+.ITconsult-main h3{
+    font-size: clamp(8px, 1.8vw + 1rem, 20px);
+    font-weight: 600;
+}
+
 .ITconsult-main p{
-    font-size: 16px;
+    font-size: clamp(8px, 1.5vw + 0.5rem, 16px);
 }
 
 .ITconsult-main span{

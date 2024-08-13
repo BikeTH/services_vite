@@ -35,16 +35,16 @@ export default function ReasonContent(){
         <div id="ITConsult" className="ITconsult-content">
                 <div className="ITconsult-reason-content">
                     <div className="ITconsult-reason-header">
-                        <h1 style={{fontSize: "24px", fontWeight:"600"}}>4 Main Reasons</h1>
-                        <h2 style={{fontSize: "42px", fontWeight:"300"}}>Professional website Boost Sales</h2>
+                        <h1 style={{fontWeight:"600"}}>4 Main Reasons</h1>
+                        <h2 style={{fontWeight:"300"}}>Professional website Boost Sales</h2>
                     </div>
                     <div className="ITconsult-reason-support">
                         {
                             reasonSupport.map(data => (
                                 <div className="ITconsult-reason-support-arrangement" key={data.id}>
-                                    <h1 style={{fontSize: "48px"}}>{data.icon}</h1>
-                                    <h2 style={{fontSize: "28px", fontWeight:"800"}}>{data.title}</h2>
-                                    <p style={{fontSize: "18px", fontWeight:"400"}}>{data.description}</p>
+                                    <h2>{data.icon}</h2>
+                                    <h1 style={{fontWeight:"800"}}>{data.title}</h1>
+                                    <p style={{ fontWeight:"400"}}>{data.description}</p>
                                 </div>
                             ))
                         }

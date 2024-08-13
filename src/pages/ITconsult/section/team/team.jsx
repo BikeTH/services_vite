@@ -10,7 +10,7 @@ const teams = [
         picture: me,
         details:(
             <>
-                <div className="team-member-info-arrangement" id="team">
+                <div className="team-member-info-arrangement">
                     <h3>Wilfred</h3>
                     <p>B.sc. Major in Cyber Security</p>
                     <p>INTP - Curious and adventurous, always eager to explore new horizons!</p>
@@ -38,8 +38,8 @@ const teams = [
 export default function Team(){
     return(
         <>
-        <div className="ITconsult-teams">
-            <h1 style={{fontSize:"24px", textAlign:"center"}}>Meet Our Team</h1>
+        <div className="ITconsult-teams" id="team">
+            <h1 style={{textAlign:"center"}}>Meet Our Team</h1>
             <div className="ITconsult-teams-arrangement">
                 {teams.map(data => (
                     <div className="ITconsult-teams-member-arrangement" key={data.id}>

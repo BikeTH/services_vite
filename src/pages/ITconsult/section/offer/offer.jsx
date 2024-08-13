@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './offer.css';
 import { CgWebsite, CgSmartphone } from "react-icons/cg";
-import { GoPackageDependents, GoArrowRight, GoArrowLeft } from "react-icons/go";
+import { GoPackageDependents} from "react-icons/go";
 import { LuPackageOpen } from "react-icons/lu";
 import { MdClose, MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import { FaRegLightbulb, FaPencilAlt, FaCode, FaBug, FaRocket } from "react-icons/fa";

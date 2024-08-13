@@ -61,8 +61,8 @@ export default function Faq(){
         <>
         <div className="ITconsult-faq" id="faq">
             <div className="ITconsult-faq-header" style={{textAlign:"center"}}>
-                <h1 style={{fontSize:"24px", margin:"0px"}}>FAQ</h1>
-                <h2 style={{fontSize:"38px", margin:"0px"}}>Ask Away! Your questions Matter to Us</h2>
+                <h1 style={{margin:"0px"}}>FAQ</h1>
+                <h2 style={{margin:"0px"}}>Ask Away! Your questions Matter to Us</h2>
             </div>
             <div className="ITconsult-faq-question">
                 {faqs.map((faq,index) => (

@@ -25,7 +25,7 @@ export default function Contact(){
                         <div className="contact-form-arrangement">
                             <div className="contact-details-back">
                                 <h1 onClick={handleBackClick}><FaArrowLeft /></h1>
-                                <p style={{textAlign:"center", fontSize:"12px"}}>Back</p>
+                                <p style={{textAlign:"center"}}>Back</p>
                             </div>
                             <div className="contact-fill-form-arrangement">
                                 <div className="contact-form-header">
@@ -67,14 +67,14 @@ export default function Contact(){
                                     <span className="contact-text">Email</span>
                                 </a>
                             </ul>
-                            <h3 style={{ textAlign: "center", padding:"12px" }}>Scan QR to find Us</h3>
+                            <h3 style={{ textAlign: "center" }}>Scan QR to find Us</h3>
                             <div className="contact-qr-arrangement">
                                 {/* QR code content */}
                             </div>
                         </div>
                         <div className="contact-form">
                             <h1 onClick={handleContactClick}><FaArrowRight /></h1>
-                            <p style={{ fontSize: "12px", textAlign:"center" }}>Write us a query</p>
+                            <p style={{ textAlign:"center" }}>Write us a query</p>
                         </div>
                     </div>
                 )}
