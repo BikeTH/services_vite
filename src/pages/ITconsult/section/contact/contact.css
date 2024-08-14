@@ -85,6 +85,10 @@
     transform: scale(1.20);
 }
 
+.ITconsult-contact-detail h3 {
+    padding: 16px;
+}
+
 /* Tooltip text styling */
 .contact-text {
     color: white;

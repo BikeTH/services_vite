@@ -48,7 +48,7 @@ export default function Contact(){
                         <img src={quotation} alt="quotation image"/>
                         <div className="ITconsult-contact-detail">
                         <h1>Request For Quotation?</h1>
-                            <p>You can directly Contact Us with no Charges and We are Happy to Help!</p>
+                            <p>You can directly Contact Us for consultation with no Charges and We are Happy to Help!</p>
                             <ul>
                                 <a href="https://www.linkedin.com/in/wilfred-tsen-yik-chong-2a37a724b" target="_blank" rel="noreferrer noopener">
                                     <FaLinkedin color="#0077B5" />

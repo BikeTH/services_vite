@@ -5,6 +5,7 @@ import { GoPackageDependents } from "react-icons/go";
 import { LuPackageOpen } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
 import ProjectSteps from "./projectStep/projectStep";
+import ScrollToSection from "../../function/scrollToSection";
 
 const offer = [
     {
@@ -22,6 +23,11 @@ const offer = [
 export default function Offer() {
     const [isPackage, setIsPackage] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
+
+    const handleClick = () => {
+        handlePackageClick();
+        ScrollToSection('offer');
+    }
 
     const handlePackageClick = () => {
         setIsPackage(!isPackage);
@@ -55,11 +61,20 @@ export default function Offer() {
                 </div>
                 <div
                     className="workflow-btn"
-                    onClick={handlePackageClick}
+                    onClick={handleClick}
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                 >
-                    {isPackage ? null : (isHovering ? <LuPackageOpen size={44} /> : <GoPackageDependents size={44} />)}
+                    {isPackage ? null : (
+                    isHovering ? (
+                        <LuPackageOpen size={44} />
+                        ) : (
+                        <div>
+                            <GoPackageDependents size={44} />
+                            <p className="click-me-text">Click me</p>
+                        </div>
+                        )
+                    )}
                 </div>
                 {isPackage && (
                     <div className="project-content">

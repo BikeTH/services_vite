@@ -1,7 +1,7 @@
 .ITconsult-banner{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -9,7 +9,21 @@
     max-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    overflow: hidden;
+}
+
+.ITconsult-banner-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.ITconsult-banner-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .ITconsult-intro-content h1{

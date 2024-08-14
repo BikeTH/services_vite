@@ -84,8 +84,7 @@ const steps = [
         details: (
             <>
                 <div>
-                    <p>Deploying into Server and you Order will be successfully delivered</p>
-                    <h3><FaDigitalOcean/></h3>
+                    <p>Deploying into <FaDigitalOcean/> Server and your Order will be successfully delivered, public will be able to access your web or app</p>
                 </div>
             </>
         )
@@ -148,13 +147,13 @@ export default function ProjectSteps() {
                 </div>
                 <div className="step-navigation">
                     {currentStep > 0 && (
-                        <button onClick={handlePrev} className="step-nav-btnmsg">
+                        <button onClick={handlePrev} className="step-nav-btnmsg prev-btn">
                             <MdArrowBackIos/>
                             <span className="step-nav-show-btmmsg">Prev</span>
                         </button>
                     )}
                     {currentStep < steps.length - 1 && (
-                        <button onClick={handleNext}  className="step-nav-btnmsg">
+                        <button onClick={handleNext}  className="step-nav-btnmsg next-btn">
                             <MdArrowForwardIos/>
                             <span className="step-nav-show-btmmsg">Next</span>
                         </button>
