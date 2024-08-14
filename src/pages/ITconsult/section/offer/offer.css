@@ -12,6 +12,13 @@
     gap: 48px;
 }
 
+.offers-arrangement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .ITconsult-offers-arrangement {
     display: flex;
     flex-direction: row;
@@ -82,58 +89,4 @@
     align-items: center;
     width: 100%;
     margin-top: 20px;
-}
-
-.project-navigation ul {
-    display: flex;
-    list-style-type: none; /* Remove bullets */
-    padding: 0;
-    margin: 0;
-    justify-content: center; /* Center the navigation bar */
-    gap: 15px; /* Add spacing between list items */
-}
-
-.project-navigation li {
-    cursor: pointer;
-    padding: 10px 15px;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.project-navigation li.active,
-.project-navigation li:hover {
-    background-color: white; /* Change background on hover and active state */
-    color: black;
-}
-
-.project-steps {
-    text-align: left;
-    margin-top: 20px;
-    width: 100%; /* Ensure the steps take full width */
-}
-
-.step-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.step-navigation button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 20px; /* Custom font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin:0;
-    transition: transform 0.3 ease;
-}
-
-.step-navigation button:hover {
-    transform: scale(1.25);
-}
-
-.step-navigation button:focus {
-    outline: none; /* Remove default outline */
 }
